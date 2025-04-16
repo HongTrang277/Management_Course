@@ -1,0 +1,63 @@
+﻿@model ManagementCenter.Models.course
+@{
+    ViewData["Title"] = "Chi tiết Khóa học";
+    bool isRegistered = ViewBag.IsRegistered ?? false;
+}
+
+<h1>@Model.course_name</h1>
+
+@* Hiển thị TempData Messages (nếu có thể bị redirect về đây) *@
+@if (TempData["SuccessMessage"] != null)
+{
+     <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+@if (TempData["WarningMessage"] != null)
+{
+     <div class="alert alert-warning">@TempData["WarningMessage"]</div>
+}
+
+<div>
+    <h4>Thông tin chi tiết</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.tutor)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.tutor)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.start_date)</dt>
+        <dd class="col-sm-9">@Model.start_date?.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.fee)</dt>
+        <dd class="col-sm-9">@Model.fee?.ToString("N0") VNĐ</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.max_capacity)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.max_capacity)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.schedule)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.schedule)</dd>
+
+        @* Thêm các trường thông tin khác của course nếu cần (mô tả, syllabus...) *@
+
+    </dl>
+</div>
+<div>
+    @* Nút Đăng ký hoặc thông báo Đã đăng ký *@
+    @if (isRegistered)
+    {
+        <span class="badge bg-secondary">Bạn đã đăng ký khóa học này</span>
+        <a asp-action="MyRegistrations" class="btn btn-sm btn-outline-info ms-2">Xem đăng ký của tôi</a>
+    }
+    else
+    {
+        <form asp-action="Register" method="post" style="display:inline;">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="courseId" value="@Model.course_id" />
+            <button type="submit" class="btn btn-success">Đăng ký ngay</button>
+        </form>
+    }
+    <hr />
+    <a asp-action="AvailableCourses">Quay lại danh sách khóa học</a>
+</div>

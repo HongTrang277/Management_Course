@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ManagementCenter.Models.course>
+@{
+    ViewData["Title"] = "Khám phá Khóa học";
+    // Lấy danh sách ID các khóa đã đăng ký từ ViewBag
+    var registeredCourseIds = ViewBag.RegisteredCourseIds as HashSet<int> ?? new HashSet<int>();
+    var registrationCounts = ViewBag.RegistrationCounts as Dictionary<int, int> ?? new Dictionary<int, int>();
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@* Hiển thị TempData Messages *@
+@if (TempData["SuccessMessage"] != null)
+{
+     <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+@if (TempData["WarningMessage"] != null)
+{
+     <div class="alert alert-warning">@TempData["WarningMessage"]</div>
+}
+
+@* Bạn có thể thay đổi cấu trúc này thành dạng thẻ (card) sau này giống hình ảnh *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.course_name)</th>
+            <th>@Html.DisplayNameFor(model => model.tutor)</th>
+            <th>@Html.DisplayNameFor(model => model.start_date)</th>
+            <th>@Html.DisplayNameFor(model => model.fee)</th>
+            <th>Số lượng còn lại</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            int currentRegistrations = registrationCounts.TryGetValue(item.course_id, out var count) ? count : 0;
+            int? remainingSlots = item.max_capacity.HasValue ? item.max_capacity.Value - currentRegistrations : (int?)null;
+            bool isFull = item.max_capacity.HasValue && remainingSlots.HasValue && remainingSlots.Value <= 0;
+            bool isRegisteredByCurrentUser = registeredCourseIds.Contains(item.course_id);
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.course_name)</td>
+                <td>@Html.DisplayFor(modelItem => item.tutor)</td>
+                <td>@item.start_date?.ToString("dd/MM/yyyy")</td>
+                <td>@item.fee?.ToString("N0") VNĐ</td>
+                <td>
+                    @* Hiển thị số lượng còn lại hoặc trạng thái dựa trên biến vừa tính *@
+                    @if (isFull)
+                    {
+                        <span class="text-danger fw-bold">Hết chỗ</span>
+                    }
+                    else if (remainingSlots.HasValue)
+                    {
+                        <span class="fw-bold text-success">@remainingSlots.Value</span>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Không giới hạn</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="CourseDetails" asp-route-id="@item.course_id" class="btn btn-sm btn-info">Xem chi tiết</a>
+
+                    @* Kiểm tra xem sinh viên đã đăng ký khóa này chưa *@
+                    @if (registeredCourseIds.Contains(item.course_id))
+                    {
+                        <span class="badge bg-secondary ms-2">Đã đăng ký</span>
+                        @* Hoặc có thể thêm link vào Khu vực học tập nếu muốn *@
+                        <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="@item.course_id" class="btn btn-sm btn-outline-primary ms-1">Vào học</a>
+                    }
+                    else
+                    {
+                        <form asp-action="Register" method="post" style="display:inline;" class="ms-2">
+                            @Html.AntiForgeryToken() @* Thêm AntiForgeryToken *@
+                            <input type="hidden" name="courseId" value="@item.course_id" />
+                            <button type="submit" class="btn btn-sm btn-success">Đăng ký</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

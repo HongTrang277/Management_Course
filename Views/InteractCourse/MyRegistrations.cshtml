@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ManagementCenter.Models.registration>
+@{
+    ViewData["Title"] = "Khóa học của tôi";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@* Hiển thị TempData Messages *@
+@if (TempData["SuccessMessage"] != null)
+{
+     <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+@if (TempData["WarningMessage"] != null)
+{
+     <div class="alert alert-warning">@TempData["WarningMessage"]</div>
+}
+
+
+@if (!Model.Any())
+{
+    <p>Bạn chưa đăng ký khóa học nào.</p>
+    <p><a asp-action="AvailableCourses">Xem các khóa học có sẵn</a></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên khóa học</th>
+                <th>Ngày đăng ký</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.course.course_name)</td>
+                    <td>@item.registration_date.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        @if (item.status == "Registered")
+                        {
+                            <span class="badge bg-success">@item.status</span>
+                        }
+                        else if (item.status == "Cancelled")
+                        {
+                            <span class="badge bg-danger">@item.status</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning">@item.status</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="CourseDetails" asp-route-id="@item.course_id" class="btn btn-sm btn-info">Chi tiết KH</a>
+
+                        @* Chỉ hiển thị nút/link phù hợp với trạng thái *@
+                        @if (item.status == "Registered")
+                        {
+                            <a asp-action="LearningZone" asp-route-id="@item.registration_id" class="btn btn-sm btn-primary ms-1">Vào học</a>
+
+                            <form asp-action="CancelRegistration" method="post" style="display:inline;" class="ms-1">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="registrationId" value="@item.registration_id" />
+                                <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Bạn có chắc muốn hủy đăng ký khóa học này?');">Hủy đăng ký</button>
+                            </form>
+                        }
+                        @* Có thể thêm các action khác tùy trạng thái *@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

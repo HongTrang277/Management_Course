@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using ManagementCenter.Data;
 
 namespace ManagementCenter.Areas.Identity.Pages.Account
 {
@@ -32,13 +33,15 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly ApplicationDbContext _context;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -46,6 +49,7 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         /// <summary>
@@ -97,6 +101,10 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
+
+            [Required]
+            [Phone]
+            public string PhoneNumber { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -174,14 +182,15 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                         // (Code tạo student profile - cần inject DbContext và bỏ comment)
                         try
                         {
-                            // var newStudentProfile = new student
-                            // {
-                            //     ApplicationUserId = user.Id,
-                            //     email = user.Email,
-                            // };
-                            // _context.Add(newStudentProfile); // Cần inject _context
-                            // await _context.SaveChangesAsync();
-                            _logger.LogInformation($"TODO: Implement student profile creation for user {user.Id}.");
+                            var newStudentProfile = new student
+                            {
+                                ApplicationUserId = user.Id,
+                                email = user.Email,
+                                phone=Input.PhoneNumber??"",
+                            };
+                            _context.Add(newStudentProfile); // Cần inject _context
+                            await _context.SaveChangesAsync();
+                            _logger.LogInformation($"TODO: Đã tạo thành công hồ sơ cho user {user.Id}.");
                         }
                         catch (Exception studentEx)
                         {

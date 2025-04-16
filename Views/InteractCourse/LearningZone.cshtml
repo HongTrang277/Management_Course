@@ -1,0 +1,23 @@
+﻿@model ManagementCenter.Models.registration
+@{
+    ViewData["Title"] = $"Học tập: {Model.course?.course_name}";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div>
+    <p>Chào mừng bạn đến với khu vực học tập của khóa học <strong>@Model.course?.course_name</strong>!</p>
+
+    <p><em>(Nội dung bài học, video, tài liệu sẽ được hiển thị ở đây...)</em></p>
+
+    @* Ví dụ hiển thị thông tin cơ bản *@
+    <p><strong>Giảng viên:</strong> @Model.course?.tutor</p>
+    <p><strong>Lịch học:</strong> @Model.course?.schedule</p>
+    <p><strong>Ngày bạn đăng ký:</strong> @Model.registration_date.ToString("dd/MM/yyyy HH:mm")</p>
+
+</div>
+<hr />
+<div>
+    <a asp-action="MyRegistrations">Quay lại danh sách khóa học đã đăng ký</a>
+</div>
