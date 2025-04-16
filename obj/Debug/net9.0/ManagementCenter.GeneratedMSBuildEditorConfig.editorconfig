@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ManagementCenter
+build_property.RootNamespace = ManagementCenter
+build_property.ProjectDir = D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/course/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY291cnNlXEluZGV4MS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/registration/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0cmF0aW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/registration/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0cmF0aW9uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/registration/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0cmF0aW9uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/registration/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0cmF0aW9uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/registration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0cmF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3R1ZGVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/student/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3R1ZGVudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/student/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3R1ZGVudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/student/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3R1ZGVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/kiki/DUT/SEM4/SEM4_hch/DotNet/Code/ManagementCenter/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-sv72ndgup8

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ManagementCenter.Models.course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tutor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.max_capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.schedule)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tutor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.max_capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.schedule)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.course_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.course_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.course_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
