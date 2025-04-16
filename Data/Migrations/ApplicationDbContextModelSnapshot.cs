@@ -175,12 +175,11 @@ namespace ManagementCenter.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("student_id"));
 
-                    b.Property<string>("email")
+                    b.Property<string>("ApplicationUserId")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("password_hash")
+                    b.Property<string>("email")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -193,12 +192,9 @@ namespace ManagementCenter.Data.Migrations
                     b.Property<string>("user_id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("user_name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.HasKey("student_id");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("user_id");
 
@@ -363,9 +359,17 @@ namespace ManagementCenter.Data.Migrations
 
             modelBuilder.Entity("ManagementCenter.Models.student", b =>
                 {
+                    b.HasOne("ManagementCenter.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ManagementCenter.Models.ApplicationUser", "user")
                         .WithMany()
                         .HasForeignKey("user_id");
+
+                    b.Navigation("ApplicationUser");
 
                     b.Navigation("user");
                 });

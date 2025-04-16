@@ -10,17 +10,23 @@
     <h4>student</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.user_name)
+        <dt class="col-sm-2">
+            User Account Email @* Hoặc Full Name *@
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.user_name)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.Email) @* Hoặc model.ApplicationUser.full_name *@
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.password_hash)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationUser.full_name)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.password_hash)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.full_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationUser.birthday)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.birthday)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.phone)
@@ -34,6 +40,16 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.email)
         </dd>
+        @* Hiển thị các khóa học đã đăng ký nếu muốn *@
+        <dt class="col-sm-2">Registered Courses</dt> 
+        <dd class="col-sm-10"> 
+        <ul> 
+        @foreach (var reg in Model.registrations) 
+        { 
+        <li>@reg.course.course_name (@reg.status)</li> 
+        } 
+        </ul> 
+        </dd> 
     </dl>
 </div>
 <div>

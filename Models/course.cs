@@ -12,12 +12,12 @@ namespace ManagementCenter.Models
         public int course_id { get; set; }
 
         [Display(Name = "Giảng Viên")]
-        public string tutor { get; set; } 
+        public string? tutor { get; set; } 
 
         [Required(ErrorMessage = "Vui lòng nhập Tên khóa học.")]
         [StringLength(200)]
         [Display(Name = "Tên Khóa Học")]
-        public string course_name { get; set; }
+        public required string course_name { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -35,12 +35,12 @@ namespace ManagementCenter.Models
         public int? max_capacity { get; set; }
 
         [Display(Name = "Lịch Học")]
-        public string schedule { get; set; }
+        public string? schedule { get; set; }
 
 
 
         
 
-        public virtual ICollection<registration> registrations { get; set; }
+        public virtual ICollection<registration> registrations { get; set; } = new List<registration>();
     }
 }

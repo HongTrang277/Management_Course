@@ -11,29 +11,29 @@
     <h4>student</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.user_name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.user_name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.password_hash)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.password_hash)
-        </dd>
+        @* <dt class = "col-sm-2"> *@
+        @*     @Html.DisplayNameFor(model => model.user_name) *@
+        @* </dt> *@
+        @* <dd class = "col-sm-10"> *@
+        @*     @Html.DisplayFor(model => model.user_name) *@
+        @* </dd> *@
+        @* <dt class = "col-sm-2"> *@
+        @*     @Html.DisplayNameFor(model => model.password_hash) *@
+        @* </dt> *@
+        @* <dd class = "col-sm-10"> *@
+        @*     @Html.DisplayFor(model => model.password_hash) *@
+        @* </dd> *@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.phone)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.phone)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.email)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationUser.Email) @* Hoặc FullName *@
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.email)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUser.Email) @* Hoặc FullName *@
         </dd>
     </dl>
     

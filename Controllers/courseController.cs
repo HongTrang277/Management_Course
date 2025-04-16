@@ -56,6 +56,7 @@ namespace ManagementCenter.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("course_id,tutor,course_name,start_date,fee,max_capacity,schedule")] course course)
         {
+            ModelState.Remove(nameof(course.registrations));
             if (ModelState.IsValid)
             {
                 _context.Add(course);
@@ -92,7 +93,7 @@ namespace ManagementCenter.Controllers
             {
                 return NotFound();
             }
-
+            ModelState.Remove(nameof(course.registrations));
             if (ModelState.IsValid)
             {
                 try

@@ -13,10 +13,11 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.user_name)
+                @* @Html.DisplayNameFor(model => model.ApplicationUser.UserName) *@
+                User Account Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.password_hash)
+                @Html.DisplayNameFor(model => model.ApplicationUser.full_name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.phone)
@@ -31,10 +32,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.user_name)
+                 @Html.DisplayFor(modelItem => item.ApplicationUser.Email) @* Hoặc UserName *@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.password_hash)
+                 @Html.DisplayFor(modelItem => item.ApplicationUser.full_name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.phone)

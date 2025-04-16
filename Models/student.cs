@@ -11,16 +11,24 @@ namespace ManagementCenter.Models
         [Key]
         public int student_id { get; set; }
 
-        // --- Thông tin đăng nhập ---
-        [Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
-        [StringLength(100)]
-        [Display(Name = "Tên đăng nhập")]
-        public string user_name { get; set; }
+        //// --- Thông tin đăng nhập ---
+        //[Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
+        //[StringLength(100)]
+        //[Display(Name = "Tên đăng nhập")]
+        //public string user_name { get; set; }
 
-        [Required(ErrorMessage = "Mật khẩu là bắt buộc")]
-        [StringLength(255)] // Đủ dài cho mật khẩu đã băm
-                            // Quan trọng: Thuộc tính này nên lưu trữ MẬT KHẨU ĐÃ BĂM (HASHED), không phải mật khẩu gốc.
-        public string password_hash { get; set; }
+        //[Required(ErrorMessage = "Mật khẩu là bắt buộc")]
+        //[StringLength(255)] // Đủ dài cho mật khẩu đã băm
+        //                    // Quan trọng: Thuộc tính này nên lưu trữ MẬT KHẨU ĐÃ BĂM (HASHED), không phải mật khẩu gốc.
+        //public string password_hash { get; set; }
+
+        // --- THÊM HOẶC ĐẢM BẢO CÓ CÁC DÒNG SAU ---
+        [Required] // Khóa ngoại không được null
+        [Display(Name = "User Account")]
+        public required string ApplicationUserId { get; set; } // Khóa ngoại trỏ đến Id của ApplicationUser
+
+        [ForeignKey("ApplicationUserId")]
+        public virtual ApplicationUser ApplicationUser { get; set; } = null!;
 
         // --- Thông tin Profile ---
 
@@ -39,6 +47,6 @@ namespace ManagementCenter.Models
 
         // --- Navigation Properties ---
         // Một Student có nhiều Registration
-        public virtual ICollection<registration> registrations { get; set; }
+        public virtual ICollection<registration> registrations { get; set; } = new List<registration>();
     }
 }

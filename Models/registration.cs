@@ -38,9 +38,9 @@ namespace ManagementCenter.Models
 
         // --- Navigation Properties ---
         [ForeignKey("student_id")]
-        public virtual student student { get; set; } // Trỏ đến Student
+        public virtual student student { get; set; } = null!;// Trỏ đến Student
 
         [ForeignKey("course_id")]
-        public virtual course course { get; set; } // Trỏ đến Course
+        public virtual course course { get; set; } = null!;// Trỏ đến Course
     }
 }

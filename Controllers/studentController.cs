@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementCenter.Data;
 using ManagementCenter.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ManagementCenter.Controllers
 {
@@ -34,6 +35,8 @@ namespace ManagementCenter.Controllers
             }
 
             var student = await _context.student
+                .Include(s => s.ApplicationUser)
+                .Include(s => s.registrations)
                 .FirstOrDefaultAsync(m => m.student_id == id);
             if (student == null)
             {
@@ -54,8 +57,9 @@ namespace ManagementCenter.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("student_id,user_name,password_hash,phone,email")] student student)
+        public async Task<IActionResult> Create([Bind("ApplicationUserId,phone,email")] student student)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(student);
@@ -73,7 +77,9 @@ namespace ManagementCenter.Controllers
                 return NotFound();
             }
 
-            var student = await _context.student.FindAsync(id);
+            var student = await _context.student
+                                  .Include(s => s.ApplicationUser) // Include ApplicationUser để hiển thị thông tin
+                                  .FirstOrDefaultAsync(s => s.student_id == id);
             if (student == null)
             {
                 return NotFound();
@@ -86,13 +92,13 @@ namespace ManagementCenter.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("student_id,user_name,password_hash,phone,email")] student student)
+        public async Task<IActionResult> Edit(int id, [Bind("student_id,phone,email")] student student)
         {
             if (id != student.student_id)
             {
                 return NotFound();
             }
-
+            var studentToUpdate = await _context.student.FirstOrDefaultAsync(s => s.student_id == id);
             if (ModelState.IsValid)
             {
                 try
@@ -125,6 +131,7 @@ namespace ManagementCenter.Controllers
             }
 
             var student = await _context.student
+                .Include(s => s.ApplicationUser)
                 .FirstOrDefaultAsync(m => m.student_id == id);
             if (student == null)
             {
