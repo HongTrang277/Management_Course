@@ -29,7 +29,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="fee" class="control-label"></label>
-                <input asp-for="fee" class="form-control" />
+                <div class="input-group">
+                    <input asp-for="fee" class="form-control" type="text" inputmode="numeric" id="feeInput" aria-describedby="fee-addon" /> @* Giữ nguyên các thuộc tính cần thiết *@
+                    <span class="input-group-text" id="fee-addon">VNĐ</span>
+                </div>
                 <span asp-validation-for="fee" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -55,4 +58,76 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function formatCurrencyInput(inputElement) {
+            // Đọc giá trị hiện tại và lưu vị trí con trỏ (nếu có thể)
+            let originalValue = inputElement.value;
+            let cursorPosition = inputElement.selectionStart;
+            let originalLength = originalValue.length;
+
+            // 1. Loại bỏ tất cả ký tự không phải là số
+            let rawValue = originalValue.replace(/[^\d]/g, '');
+
+            // Nếu sau khi loại bỏ không còn gì, đặt giá trị là rỗng
+            if (rawValue === '') {
+                if (originalValue !== '') {
+                    inputElement.value = '';
+                }
+                return;
+            }
+
+            try {
+                // 2. Chuyển đổi thành số để định dạng (xử lý trường hợp lỗi)
+                let numberValue = parseInt(rawValue, 10);
+                if (isNaN(numberValue)) {
+                    numberValue = 0; // Hoặc xử lý lỗi khác
+                }
+
+                // 3. Định dạng số sử dụng Intl.NumberFormat với locale 'vi-VN'
+                // Locale này sẽ dùng dấu '.' làm dấu phân cách hàng nghìn
+                let formatter = new Intl.NumberFormat('vi-VN');
+                let formattedValue = formatter.format(numberValue);
+
+                // 4. Cập nhật lại giá trị của ô input nếu nó thực sự thay đổi
+                if (inputElement.value !== formattedValue) {
+                    inputElement.value = formattedValue;
+
+                    // Cố gắng khôi phục vị trí con trỏ một cách tương đối
+                    // Lưu ý: Việc này không hoàn hảo nếu không dùng thư viện chuyên dụng
+                    try {
+                       let newLength = formattedValue.length;
+                       // Tính toán vị trí mới dựa trên sự thay đổi độ dài
+                       let newCursorPosition = cursorPosition + (newLength - originalLength);
+                       // Đảm bảo vị trí con trỏ hợp lệ
+                       newCursorPosition = Math.max(0, Math.min(newCursorPosition, newLength));
+                       inputElement.setSelectionRange(newCursorPosition, newCursorPosition);
+                    } catch (e) {
+                        // Một số trình duyệt/input type có thể không hỗ trợ setSelectionRange
+                        console.warn("Không thể đặt vị trí con trỏ.", e);
+                    }
+                }
+            } catch (error) {
+                console.error("Lỗi định dạng tiền tệ:", error);
+                // Có thể giữ lại giá trị gốc hoặc làm gì đó khác
+            }
+        }
+
+        // Lấy phần tử input bằng ID
+        const feeInputElement = document.getElementById('feeInput');
+
+        if (feeInputElement) {
+            // Gắn hàm định dạng vào sự kiện 'input' (khi người dùng gõ)
+            feeInputElement.addEventListener('input', function(event) {
+                formatCurrencyInput(event.target);
+            });
+
+            // Định dạng giá trị ban đầu khi trang tải xong (quan trọng cho form Edit)
+            // Đảm bảo nó chạy sau khi giá trị ban đầu được nạp vào ô input
+            window.addEventListener('load', function() {
+                 formatCurrencyInput(feeInputElement);
+            });
+            // Hoặc gọi ngay nếu không có vấn đề về timing
+            // formatCurrencyInput(feeInputElement);
+        }
+    </script>
 }

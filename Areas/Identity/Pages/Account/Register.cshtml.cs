@@ -135,6 +135,7 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
 
                 // Gán giá trị thuộc tính tùy chỉnh TRƯỚC KHI LƯU
                 user.full_name = Input.FullName;
+                user.PhoneNumber = Input.PhoneNumber; // Gán cả PhoneNumber nếu ApplicationUser có thuộc tính này
                 // user.birthday = Input.BirthDay; // Gán nếu có
 
                 IdentityResult result = null; // Khai báo ngoài try để có thể dùng sau này
@@ -178,6 +179,39 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                     if (result.Succeeded)
                     {
                         _logger.LogInformation("User created a new account with password.");
+
+                        // ==========================================================
+                        // == THÊM VAI TRÒ "Student" CHO NGƯỜI DÙNG MỚI TẠI ĐÂY ==
+                        // ==========================================================
+                        try
+                        {
+                            // Đảm bảo vai trò "Student" đã tồn tại (thông qua seeding trong Program.cs)
+                            var roleResult = await _userManager.AddToRoleAsync(user, "Student");
+                            if (roleResult.Succeeded)
+                            {
+                                _logger.LogInformation($"User {user.UserName} was assigned the 'Student' role.");
+                            }
+                            else
+                            {
+                                _logger.LogError($"Error assigning 'Student' role to user {user.UserName}.");
+                                foreach (var error in roleResult.Errors)
+                                {
+                                    _logger.LogError($"- Role Assignment Error: {error.Code} - {error.Description}");
+                                    // Có thể thêm lỗi vào ModelState nếu việc gán vai trò là bắt buộc
+                                    // ModelState.AddModelError(string.Empty, $"Failed to assign role: {error.Description}");
+                                }
+                                // Quyết định xem có nên tiếp tục nếu gán vai trò lỗi không?
+                                // Nếu việc gán vai trò thất bại là nghiêm trọng, có thể return Page(); ở đây
+                            }
+                        }
+                        catch (Exception roleEx)
+                        {
+                            _logger.LogError(roleEx, $"Exception assigning 'Student' role to user {user.UserName}.");
+                            // Xử lý exception khi gán vai trò
+                        }
+                        // ==========================================================
+                        // ==             KẾT THÚC PHẦN GÁN VAI TRÒ               ==
+                        // ==========================================================
 
                         // (Code tạo student profile - cần inject DbContext và bỏ comment)
                         try

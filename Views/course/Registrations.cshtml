@@ -1,0 +1,64 @@
+﻿@* File: Views/course/Registrations.cshtml *@
+@model IEnumerable<ManagementCenter.Models.registration>
+
+@{
+    ViewData["Title"] = "Danh sách đăng ký - " + ViewBag.CourseName;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Index">Quay lại Danh sách Khóa học</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Họ Tên Học viên</th>
+            <th>Email Học viên</th>
+            <th>Ngày Đăng Ký</th>
+            <th>Trạng Thái</th>
+            <th>Ngày Hủy (nếu có)</th>
+            <th>Thao tác</th> @* Có thể thêm nút xem chi tiết đăng ký/học viên *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.student.ApplicationUser.full_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.student.ApplicationUser.Email)
+                </td>
+                <td>
+                    @item.registration_date.ToString("dd/MM/yyyy HH:mm")
+                </td>
+                <td>
+                    @* Hiển thị trạng thái bằng badge *@
+                    @if (item.status == "Registered")
+                    {
+                        <span class="badge bg-success">@item.status</span>
+                    }
+                    else if (item.status == "Cancelled")
+                    {
+                        <span class="badge bg-danger">@item.status</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning">@item.status</span>
+                    }
+                </td>
+                <td>
+                    @item.cancellation_date?.ToString("dd/MM/yyyy HH:mm")
+                </td>
+                <td>
+                    @* Link tới trang chi tiết của registration (nếu có) hoặc student *@
+                    <a asp-controller="registration" asp-action="Details" asp-route-id="@item.registration_id">Xem chi tiết ĐK</a> |
+                    <a asp-controller="student" asp-action="Details" asp-route-id="@item.student_id">Xem chi tiết HV</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

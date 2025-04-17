@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ManagementCenter.Models.course>
+@using System.Globalization;
 
 @{
     ViewData["Title"] = "Index";
@@ -6,9 +7,27 @@
 
 <h1>Index</h1>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null) @* Thêm luôn cho lỗi nếu cần *@
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Tạo khóa học mới</a>
 </p>
+<form asp-action="Index" method="get">
+    @* Sử dụng GET để hiển thị từ khóa tìm kiếm trên URL *@
+    <div class="form-actions no-color">
+        <p>
+            Tìm kiếm: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-action="Index">Back to Full List</a> @* Link để xóa bộ lọc *@
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -43,11 +62,18 @@
                 @Html.DisplayFor(modelItem => item.course_name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.start_date)
+                @item.start_date?.ToString("dd/MM/yyyy")
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fee)
-            </td>
+             <td>
+                    @* Kiểm tra fee có giá trị không (vì là decimal?) *@
+                    @(item.fee.HasValue ?
+                        // Nếu có giá trị: Định dạng số theo chuẩn "N0" của vi-VN và thêm " VNĐ"
+                        item.fee.Value.ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " VNĐ"
+                        :
+                        // Nếu là null: Hiển thị chuỗi rỗng hoặc ký tự khác tùy bạn
+                        ""
+                        )
+             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.max_capacity)
             </td>
@@ -63,3 +89,4 @@
 }
     </tbody>
 </table>
+

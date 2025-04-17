@@ -7,6 +7,23 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+<form asp-controller="InteractCourse" asp-action="AvailableCourses" method="get">
+    @* Trỏ về đúng Action và dùng GET *@
+    <div class="form-actions no-color mb-3">
+        <p>
+            Tìm kiếm:
+            <input type="text" name="SearchString" value="@(ViewData["CurrentFilter"] as string)" /> @* name="SearchString" khớp với tham số Action *@
+            <input type="submit" value="Search" class="btn btn-primary btn-sm" /> 
+            @if (!String.IsNullOrEmpty(ViewData["CurrentFilter"] as string)) // Kiểm tra nếu có filter đang được áp dụng
+            {
+                @* Thẻ <text> để Razor hiểu đây là nội dung HTML cần render bên trong khối C# *@
+                <text> | </text>
+                <a asp-action="AvailableCourses">Clear Search</a> @* Chỉ hiển thị link này nếu có filter *@
+            }
+           
+        </p>
+    </div>
+</form>
 
 @* Hiển thị TempData Messages *@
 @if (TempData["SuccessMessage"] != null)

@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using ManagementCenter.Data;
 using ManagementCenter.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManagementCenter.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class studentController : Controller
     {
         private readonly ApplicationDbContext _context;

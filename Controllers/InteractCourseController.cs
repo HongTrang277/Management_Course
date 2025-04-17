@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ManagementCenter.Controllers
 {
+  
     public class InteractCourseController : Controller
     {
         public IActionResult Index()
@@ -46,6 +47,7 @@ namespace ManagementCenter.Controllers
 
         // --- 1. Xem danh sách các khóa học đã đăng ký ---
         // GET: /StudentArea/MyRegistrations
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> MyRegistrations()
         {
             var student = await GetCurrentStudent();
@@ -71,6 +73,7 @@ namespace ManagementCenter.Controllers
         // POST: /StudentArea/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> Register(int courseId) // Nhận courseId từ form
         {
             var student = await GetCurrentStudent();
@@ -142,6 +145,7 @@ namespace ManagementCenter.Controllers
         // POST: /StudentArea/CancelRegistration
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> CancelRegistration(int registrationId) // Nhận registrationId từ form
         {
             var student = await GetCurrentStudent();
@@ -194,6 +198,7 @@ namespace ManagementCenter.Controllers
 
         // --- 4. Khu vực học tập (Ví dụ đơn giản) ---
         // GET: /StudentArea/LearningZone/5 (id là registrationId)
+        [Authorize(Roles = "Student")]
         public async Task<IActionResult> LearningZone(int? id) // id là registrationId
         {
             if (id == null)
@@ -228,34 +233,59 @@ namespace ManagementCenter.Controllers
 
         // --- 5. Xem danh sách các khóa học có sẵn để đăng ký ---
         // GET: /StudentArea/AvailableCourses
-        public async Task<IActionResult> AvailableCourses()
+        [AllowAnonymous]
+
+        public async Task<IActionResult> AvailableCourses(string searchString)
         {
-            // Lấy danh sách các khóa học (có thể lọc bỏ các khóa học cũ hoặc đã đủ người)
-            var courses = await _context.course
-                                  // .Where(c => c.start_date >= DateTime.Today) // Ví dụ: chỉ lấy khóa học chưa bắt đầu
-                                  .OrderBy(c => c.start_date) // Sắp xếp theo ngày bắt đầu
-                                  .ToListAsync();
-
-            // Lấy danh sách ID các khóa học mà sinh viên hiện tại đã đăng ký (và chưa hủy)
-            var student = await GetCurrentStudent();
-            HashSet<int> registeredCourseIds = new HashSet<int>();
-            if (student != null)
+            // --- Phần truy vấn và lọc course theo searchString giữ nguyên ---
+            var coursesQuery = _context.course.AsQueryable();
+            ViewData["CurrentFilter"] = searchString;
+            if (!String.IsNullOrEmpty(searchString))
             {
-                registeredCourseIds = await _context.registration
-                                            .Where(r => r.student_id == student.student_id && r.status != "Cancelled")
-                                            .Select(r => r.course_id)
-                                            .ToHashSetAsync();
+                coursesQuery = coursesQuery.Where(c => c.course_name.ToUpper().Contains(searchString.ToUpper())
+                                                   || c.tutor.ToUpper().Contains(searchString.ToUpper()));
             }
-            ViewBag.RegisteredCourseIds = registeredCourseIds; // Truyền danh sách ID đã đăng ký sang View
-            var courseIds = courses.Select(c => c.course_id).ToList();
-            var registrationCounts = await _context.registration
-                                    .Where(r => courseIds.Contains(r.course_id) && r.status != "Cancelled")
-                                    .GroupBy(r => r.course_id)
-                                    .Select(g => new { CourseId = g.Key, Count = g.Count() })
-                                    .ToDictionaryAsync(x => x.CourseId, x => x.Count);
-            ViewBag.RegistrationCounts = registrationCounts;
+            coursesQuery = coursesQuery.OrderBy(c => c.start_date);
+            var courses = await coursesQuery.ToListAsync();
+            // --- Kết thúc phần lọc course ---
 
-            return View(courses); // Cần tạo View: Views/StudentArea/AvailableCourses.cshtml
+            HashSet<int> registeredCourseIds = new HashSet<int>();
+
+            // Chỉ thực hiện logic này nếu người dùng là Student đã đăng nhập
+            if (User.Identity.IsAuthenticated && User.IsInRole("Student"))
+            {
+                // 1. Lấy đối tượng student tương ứng với ApplicationUser đang đăng nhập
+                var currentStudent = await GetCurrentStudent();
+
+                if (currentStudent != null)
+                {
+                    // 2. Lấy khóa chính (int) từ đối tượng student đã lấy được
+                    int studentPrimaryKey = currentStudent.student_id; // <-- Lấy student_id (int) từ student
+
+                    // 3. Sử dụng khóa chính (int) này để so sánh với r.student_id (int)
+                    registeredCourseIds = await _context.registration
+                            .Where(r => r.student_id == studentPrimaryKey && r.status != "Cancelled") // <-- So sánh int == int
+                            .Select(r => r.course_id)
+                            .ToHashSetAsync();
+                }
+            }
+            ViewBag.RegisteredCourseIds = registeredCourseIds; // Truyền đi
+
+            // --- Phần lấy registrationCounts giữ nguyên ---
+            var courseIds = courses.Select(c => c.course_id).ToList();
+            Dictionary<int, int> registrationCounts = new Dictionary<int, int>();
+            if (courseIds.Any())
+            {
+                registrationCounts = await _context.registration
+                       .Where(r => courseIds.Contains(r.course_id) && r.status != "Cancelled")
+                       .GroupBy(r => r.course_id)
+                       .Select(g => new { CourseId = g.Key, Count = g.Count() })
+                       .ToDictionaryAsync(x => x.CourseId, x => x.Count);
+            }
+            ViewBag.RegistrationCounts = registrationCounts;
+            // --- Kết thúc phần lấy registrationCounts ---
+          
+            return View(courses);
         }
 
 
