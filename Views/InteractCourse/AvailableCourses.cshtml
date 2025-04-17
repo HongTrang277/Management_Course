@@ -6,7 +6,7 @@
     var registrationCounts = ViewBag.RegistrationCounts as Dictionary<int, int> ?? new Dictionary<int, int>();
 }
 
-<h1>@ViewData["Title"]</h1>
+
 <form asp-controller="InteractCourse" asp-action="AvailableCourses" method="get">
     @* Trỏ về đúng Action và dùng GET *@
     <div class="form-actions no-color mb-3">

@@ -351,7 +351,6 @@ D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compress
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
-D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\iyedlulu94-b9sayid5wm.gz
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\wokghcaxvy-61n19gt1b8.gz
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\2j3y7u98mh-xtxxf3hu2r.gz
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\qx8bgqmzq1-bqjiyaj88i.gz
@@ -431,3 +430,4 @@ D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\refint\M
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\ManagementCenter.pdb
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\ManagementCenter.genruntimeconfig.cache
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\ref\ManagementCenter.dll
+D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\obj\Debug\net9.0\compressed\iyedlulu94-agtk4u1rd5.gz

@@ -1,3 +1,19 @@
+﻿:root {
+    --primary-color: #987ff3; /* Màu tím chủ đạo (Giữ nguyên hoặc đổi) */
+    --secondary-color: #2cb67d; /* Màu xanh lá (Giữ nguyên hoặc đổi) */
+    /* --- MÀU TỐI --- */
+    --background-dark: rgb(34, 35, 40); /* Nền tối chính (TỪ CODE CỦA BẠN) */
+    /* Đặt nền sidebar/header giống nền chính cho thống nhất */
+    --background-light: rgb(34, 33, 40); /* Nền tối nhẹ hơn (ĐẶT GIỐNG NỀN CHÍNH) */
+    --text-primary: rgb(203, 213, 225); /* Màu chữ chính (TỪ CODE CỦA BẠN) */
+    --text-secondary: #94a1b2; /* Màu chữ phụ (Giữ nguyên hoặc đổi thành xám nhạt hơn) */
+    --border-color: rgb(45, 46, 50); /* Màu viền (Đổi thành tối hơn một chút) */
+    /* Hoặc giữ màu cũ: --border-color: #444; */
+    /* Màu hover mặc định cho link */
+    --bs-link-hover-color: var(--primary-color);
+}
+
+
 html {
   font-size: 14px;
 }
@@ -17,9 +33,9 @@ html {
   min-height: 100%;
 }
 
-body {
+/*body {
   margin-bottom: 60px;
-}
+}*/
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -29,3 +45,181 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Thêm vào wwwroot/css/site.css */
+body {
+    background-color: var(--background-dark); /* Nền tối cho toàn trang */
+    color: var(--text-primary); /* Màu chữ mặc định là trắng */
+    display: flex; /* Sử dụng flex để layout chính */
+    flex-direction: column; /* Sắp xếp theo cột */
+    min-height: 100vh; /* Đảm bảo body cao ít nhất bằng màn hình */
+   
+}
+
+.sidebar {
+    background-color: var(--background-light); /* Dùng biến này để đặt nền tối */
+    border-right: 1px solid var(--border-color);
+    width=240px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /*padding: 56px 0 0;*/ /* Padding for top navbar height */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem; /* Điều chỉnh nếu header trên mobile cao hơn */
+        padding-top: 0; /* Reset padding khi sidebar collapse */
+    }
+}
+
+/* Đẩy menu trong sidebar xuống */
+.sidebar .nav.flex-column {
+    margin-top: 2.5rem; /* <<< THÊM DÒNG NÀY - Điều chỉnh giá trị 2.5rem cho phù hợp */
+    /* Ví dụ: 2rem, 3rem, 40px, ... */
+}
+
+/* Style cơ bản cho link menu sidebar */
+.sidebar .nav-link {
+    font-weight: 400;
+    /* color: var(--text-secondary); */ /* Bỏ màu cũ */
+    /*color: var(--primary-color);*/ /* <<< Đổi thành màu tím */
+    color: var(--text-secondary);
+
+    padding: .75rem 1rem;
+    /* border-right: 3px solid transparent; */ /* <<< Xóa hoặc comment dòng này */
+    border: 2px solid transparent; /* <<< THÊM: Border trong suốt giữ chỗ */
+    border-radius: 0.75rem; /* <<< TÙY CHỌN: Bo góc nhẹ */
+    transition: all 0.15s ease-in-out; /* <<< TÙY CHỌN: Hiệu ứng chuyển động mượt */
+    margin-bottom: 0.25rem; /* <<< TÙY CHỌN: Khoảng cách nhỏ giữa các mục */
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 56px); /* Chiều cao trừ đi header */
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable scroll if needed */
+}
+
+main {
+    padding-top: 1rem; /* Hoặc giá trị khác để cách header */
+}
+.main-wrapper {
+    margin-left: 240px; /* <<< GIÁ TRỊ NÀY PHẢI BẰNG width CỦA .sidebar */
+}
+
+
+/* Nên thêm các style nền tối và màu chữ như Bước 2 đã hướng dẫn */
+
+/* --- Sửa màu chữ cho LoginPartial trên Navbar tối (Selectors mạnh hơn) --- */
+/* Áp dụng đúng cho navbar-dark */
+.navbar {
+    background-color: rgb(35, 34, 43); /* <<< THÊM DÒNG NÀY ĐỂ DÙNG MÀU NỀN TỐI NHẤT */
+    border-bottom: 1px solid var(--border-color); /* Giữ lại viền dưới nếu muốn */
+     padding-top: 0.05rem; 
+    padding-bottom: 0.05rem;
+    height: 40px;
+}
+.sidebar .nav-link:hover {
+    /* color: var(--text-primary); */ /* Bỏ màu trắng cũ */
+    color: var(--primary-color); /* <<< ĐỔI CHỮ THÀNH MÀU TÍM */
+    background-color: rgba(127, 90, 240, 0.05); /* Giảm nhẹ màu nền hover nếu muốn */
+    border-color: var(--primary-color); /* <<< HIỆN BORDER MÀU TÍM */
+    /* font-weight: normal; */ /* Đảm bảo không bị đậm khi chỉ hover */
+}
+
+/* Style Active cho link menu sidebar */
+.sidebar .nav-link.active {
+    color: var(--primary-color); /* <<< CHỮ MÀU TÍM */
+    font-weight: bold; /* Giữ in đậm */
+    background-color: rgba(127, 90, 240, 0.05); /* Nền giống hover hoặc đậm hơn chút */
+    border-color: var(--primary-color); /* <<< HIỆN BORDER MÀU TÍM */
+}
+/* Trường hợp link nằm trong dropdown có nền sáng thì phải đổi lại màu */
+.dropdown-menu a.dropdown-item {
+    color: #212529; /* đen mặc định */
+}
+
+    .dropdown-menu a.dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #0d6efd;
+    }
+
+
+    /* Định dạng Hover/Focus */
+    .navbar-collapse .nav-item a.nav-link[asp-area="Identity"]:hover,
+    .navbar-collapse .nav-item a.nav-link[asp-area="Identity"]:focus,
+    .navbar-collapse a#register:hover,
+    .navbar-collapse a#register:focus,
+    .navbar-collapse a#login:hover,
+    .navbar-collapse a#login:focus,
+    .navbar-collapse a#manage:hover,
+    .navbar-collapse a#manage:focus,
+    .navbar-collapse form[asp-area="Identity"] button.nav-link:hover,
+    .navbar-collapse form[asp-area="Identity"] button.nav-link:focus,
+    .navbar-collapse button#logout:hover,
+    .navbar-collapse button#logout:focus {
+        color: #ffffff !important; /* Màu tím khi hover/focus */
+        /* Hoặc màu trắng sáng hơn: color: #ffffff !important; */
+        text-decoration: none; /* Bỏ gạch chân khi hover */
+    }
+
+/* --- Định dạng Card Khóa học của Admin --- */
+/*.admin-course-card {
+    background-color: var(--background-light);*/ /* Nền tối nhẹ */
+    /*border: 1px solid var(--border-color);
+    border-radius: 0.5rem;*/ /* Bo góc nhẹ */
+    /*transition: box-shadow 0.2s ease-in-out;
+}
+
+    .admin-course-card:hover {
+        box-shadow: 0 0.5rem 1rem rgba(127, 90, 240, 0.15) !important;*/ /* Shadow màu tím nhạt khi hover */
+    /*}
+
+
+.admin-card-img {
+    height: 160px;*/ /* Chiều cao cố định cho ảnh */
+    /*object-fit: cover;*/ /* Cắt ảnh cho vừa khung */
+/*}
+
+.admin-course-card .card-body {
+    padding: 0.8rem 1rem;*/ /* Giảm padding body một chút */
+/*}
+
+.admin-course-card .card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}*/
+
+/* Giới hạn chiều cao và hiển thị dấu ... cho mô tả dài */
+/*.admin-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;*/ /* Số dòng tối đa muốn hiển thị */
+    /*-webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 4.5em;*/ /* Ước lượng chiều cao cho 3 dòng */
+    /*margin-bottom: 0.5rem !important;
+}
+
+.admin-course-card .card-footer {
+    background-color: rgba(0,0,0,0.1);*/ /* Nền mờ nhẹ cho footer */
+    /*border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+}*/
+
+/* Đảm bảo màu chữ trên các nút rõ ràng (nếu cần) */
+/*.admin-card-actions .btn-warning {
+    color: #333;*/ /* Chữ đen trên nền vàng */
+/*}
+
+.admin-card-actions .btn-info {
+    color: white;
+}*/

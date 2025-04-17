@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -62,6 +62,7 @@ D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\wwwroot\lib\jquery\dist\j
 D:\kiki\DUT\SEM4\SEM4_hch\DotNet\Code\ManagementCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

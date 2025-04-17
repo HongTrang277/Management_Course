@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jVA3JlovAeFTRM9peotorAoBSly5Vg/4XMnD3e5zvIk=",
+  "Hash": "8FXjSJafRnFFa37nvr7O6dcwbgB6aQ1rhiPOXfh0B40=",
   "Source": "ManagementCenter",
   "BasePath": "_content/ManagementCenter",
   "Mode": "Default",
@@ -2474,12 +2474,12 @@
       "OriginalItemSpec": "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.0\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-b9sayid5wm.gz",
+      "Identity": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-agtk4u1rd5.gz",
       "SourceId": "ManagementCenter",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ManagementCenter",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=agtk4u1rd5}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -2488,8 +2488,8 @@
       "RelatedAsset": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "wf4wcyqcqt",
-      "Integrity": "fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I=",
+      "Fingerprint": "4fef5d9lcj",
+      "Integrity": "QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css"
@@ -4042,8 +4042,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "agtk4u1rd5",
+      "Integrity": "5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -4068,6 +4068,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\images\\logo.png",
+      "SourceId": "ManagementCenter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\",
+      "BasePath": "_content/ManagementCenter",
+      "RelativePath": "images/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "36iynwwctn",
+      "Integrity": "hXhfOdGztZ7GNf+8t6MBJkJduQiclhGELoWPHRdX6TA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\js\\site.js",
@@ -5353,13 +5374,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-b9sayid5wm.gz",
+      "Route": "css/site.agtk4u1rd5.css",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-agtk4u1rd5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003125000000"
+          "Quality": "0.000342700480"
         }
       ],
       "ResponseHeaders": [
@@ -5369,15 +5390,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "319"
+          "Value": "2917"
         },
         {
           "Name": "ETag",
-          "Value": "\"fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I=\""
+          "Value": "\"QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5397,13 +5418,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "agtk4u1rd5"
         },
         {
           "Name": "label",
@@ -5411,12 +5432,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.agtk4u1rd5.css",
       "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5426,7 +5447,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "8154"
         },
         {
           "Name": "Content-Type",
@@ -5434,11 +5455,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5448,7 +5469,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "agtk4u1rd5"
         },
         {
           "Name": "label",
@@ -5456,13 +5477,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-b9sayid5wm.gz",
+      "Route": "css/site.agtk4u1rd5.css.gz",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-agtk4u1rd5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5471,7 +5492,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "319"
+          "Value": "2917"
         },
         {
           "Name": "Content-Type",
@@ -5479,11 +5500,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I=\""
+          "Value": "\"QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5501,7 +5522,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "agtk4u1rd5"
         },
         {
           "Name": "label",
@@ -5509,7 +5530,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I="
+          "Value": "sha256-QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q="
         }
       ]
     },
@@ -5552,12 +5573,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-b9sayid5wm.gz",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-agtk4u1rd5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003125000000"
+          "Quality": "0.000342700480"
         }
       ],
       "ResponseHeaders": [
@@ -5567,15 +5588,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "319"
+          "Value": "2917"
         },
         {
           "Name": "ETag",
-          "Value": "\"fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I=\""
+          "Value": "\"QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5595,13 +5616,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps="
         }
       ]
     },
@@ -5616,7 +5637,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "8154"
         },
         {
           "Name": "Content-Type",
@@ -5624,11 +5645,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5638,13 +5659,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-5qFaN6dbjJLtjlATpPGZq6XOyFtxGq9zSmMQ58H7Jps="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-b9sayid5wm.gz",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\obj\\Debug\\net9.0\\compressed\\iyedlulu94-agtk4u1rd5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5653,7 +5674,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "319"
+          "Value": "2917"
         },
         {
           "Name": "Content-Type",
@@ -5661,11 +5682,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I=\""
+          "Value": "\"QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 11:20:03 GMT"
+          "Value": "Thu, 17 Apr 2025 23:05:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5683,7 +5704,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fNKkLSNFLZMVTc2zVrpMXQqOwPU3sU4GWcfEbCR2V1I="
+          "Value": "sha256-QMDv45PUfpmDsR7LPvDXstfn9xxv3ndxby9HtgPmZ/Q="
         }
       ]
     },
@@ -14550,6 +14571,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-1HkjQSVuV0/ji/X/lGeDTHeagBS0BwopMrHDQuwqgtU="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.36iynwwctn.png",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54786"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hXhfOdGztZ7GNf+8t6MBJkJduQiclhGELoWPHRdX6TA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 22:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "36iynwwctn"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXhfOdGztZ7GNf+8t6MBJkJduQiclhGELoWPHRdX6TA="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.png",
+      "AssetFile": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54786"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hXhfOdGztZ7GNf+8t6MBJkJduQiclhGELoWPHRdX6TA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 22:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXhfOdGztZ7GNf+8t6MBJkJduQiclhGELoWPHRdX6TA="
         }
       ]
     },

@@ -5,7 +5,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
 @if (TempData["SuccessMessage"] != null)
 {
@@ -15,9 +14,7 @@
 {
     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
 }
-<p>
-    <a asp-action="Create">Tạo khóa học mới</a>
-</p>
+
 <form asp-action="Index" method="get">
     @* Sử dụng GET để hiển thị từ khóa tìm kiếm trên URL *@
     <div class="form-actions no-color">
