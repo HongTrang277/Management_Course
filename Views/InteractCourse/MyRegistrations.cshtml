@@ -1,79 +1,109 @@
 ﻿@model IEnumerable<ManagementCenter.Models.registration>
+@using System.Globalization;
+
 @{
-    ViewData["Title"] = "Khóa học của tôi";
+    ViewData["Title"] = "Khu vực học tập";
+    // Không cần lấy ngày hôm nay nữa nếu không tính toán gì liên quan
+    // var today = DateTime.Now.Date;
 }
 
-<h1>@ViewData["Title"]</h1>
-
-@* Hiển thị TempData Messages *@
-@if (TempData["SuccessMessage"] != null)
-{
-     <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-     <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-}
-@if (TempData["WarningMessage"] != null)
-{
-     <div class="alert alert-warning">@TempData["WarningMessage"]</div>
-}
-
+@* Phần TempData và kiểm tra Model trống giữ nguyên *@
+@if (TempData["SuccessMessage"] != null) { /* ... alert ... */ }
+@if (TempData["ErrorMessage"] != null) { /* ... alert ... */ }
+@if (TempData["WarningMessage"] != null) { /* ... alert ... */ }
 
 @if (!Model.Any())
 {
-    <p>Bạn chưa đăng ký khóa học nào.</p>
-    <p><a asp-action="AvailableCourses">Xem các khóa học có sẵn</a></p>
+        <div class="text-center mt-5">
+        @* ... Nội dung khi không có khóa học ... *@
+             <p>Bạn chưa đăng ký khóa học nào.</p>
+             <p><a asp-action="AvailableCourses" asp-controller="InteractCourse" class="btn btn-primary">Khám phá khóa học</a></p>
+        </div>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Tên khóa học</th>
-                <th>Ngày đăng ký</th>
-                <th>Trạng thái</th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.course.course_name)</td>
-                    <td>@item.registration_date.ToString("dd/MM/yyyy HH:mm")</td>
-                    <td>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+        @foreach (var item in Model)
+        {
+            string backgroundStyle = !string.IsNullOrEmpty(item.course?.ImageUrl)
+                ? $"background-image: url('{System.Net.WebUtility.HtmlEncode(item.course.ImageUrl)}');"
+                : "background-color: #495057;";
+
+            string cardExtraClass = item.status == "Cancelled" ? "opacity-75" : "";
+
+                    <div class="col">
+                        <div class="course-card h-100 @cardExtraClass" style="@backgroundStyle">
+
+                            <div class="course-card-content">
+                                <h5 class="course-card-title">@(item.course?.course_name ?? "N/A")</h5>
+                                <p class="course-card-text small mb-1">GV: @(item.course?.tutor ?? "N/A")</p>
+                                <p class="course-card-text small mb-2">Ngày ĐK: @item.registration_date.ToString("dd/MM/yyyy")</p>
+
+                        @* Hiển thị trạng thái bằng Badge *@
+                                <p class="mb-2">
+                            @if (item.status == "Registered")
+                            {
+                                <span class="badge bg-success">Đang học</span>
+                            }
+                            else if (item.status == "Cancelled")
+                            {
+                                <span class="badge bg-danger">Đã hủy</span>
+                            }
+                            else if (item.status == "Completed")
+                            {
+                                <span class="badge bg-info">Đã hoàn thành</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning">@item.status</span>
+                            }
+                                </p>
+
+                        @* --- ĐÃ XÓA THANH TIẾN ĐỘ (PROGRESS BAR) --- *@
+
+                        @if (item.status == "Cancelled" && item.cancellation_date.HasValue)
+                        {
+                                         <p class="course-card-text small fst-italic">Ngày hủy: @item.cancellation_date.Value.ToString("dd/MM/yyyy")</p>
+                        }
+                            </div> @* End course-card-content *@
+
+                            <div class="course-card-actions">
+                        @* Nút xem chi tiết khóa học (luôn hiển thị) *@
+                                 <a asp-action="CourseDetails" asp-controller="InteractCourse" asp-route-id="@item.course_id" class="btn btn-sm btn-light" title="Xem chi tiết khóa học">
+                                     <i class="bi bi-info-circle"></i> Chi tiết
+                                 </a>
+
+                        @* Chỉ hiển thị nút "Tiếp tục học" nếu đang học (Registered) *@
                         @if (item.status == "Registered")
                         {
-                            <span class="badge bg-success">@item.status</span>
+                            @* Nút vào khu vực học tập chi tiết *@
+                                        <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="@item.registration_id" class="btn btn-sm btn-purple ms-1" title="Vào học">
+                                            <i class="bi bi-play-circle-fill"></i> Tiếp tục học
+                                        </a>
+                            @* --- NÚT HỦY ĐÃ BỊ XÓA --- *@
                         }
-                        else if (item.status == "Cancelled")
-                        {
-                            <span class="badge bg-danger">@item.status</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-warning">@item.status</span>
-                        }
-                    </td>
-                    <td>
-                        <a asp-action="CourseDetails" asp-route-id="@item.course_id" class="btn btn-sm btn-info">Chi tiết KH</a>
+                        @* Có thể thêm nút khác cho trạng thái "Completed" *@
 
-                        @* Chỉ hiển thị nút/link phù hợp với trạng thái *@
-                        @if (item.status == "Registered")
-                        {
-                            <a asp-action="LearningZone" asp-route-id="@item.registration_id" class="btn btn-sm btn-primary ms-1">Vào học</a>
+                            </div> @* End course-card-actions *@
 
-                            <form asp-action="CancelRegistration" method="post" style="display:inline;" class="ms-1">
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="registrationId" value="@item.registration_id" />
-                                <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Bạn có chắc muốn hủy đăng ký khóa học này?');">Hủy đăng ký</button>
-                            </form>
-                        }
-                        @* Có thể thêm các action khác tùy trạng thái *@
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                        </div> @* End course-card *@
+                    </div> @* End col *@
+        } @* End foreach *@
+        </div> @* End row *@
+}
+
+@* Section Styles và Scripts giữ nguyên như trước *@
+@section Styles {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            .btn-purple { color: #fff; background-color: #6f42c1; border-color: #6f42c1; font-weight: 600; }
+            .btn-purple:hover { color: #fff; background-color: #5a379b; border-color: #5a379b; }
+            .opacity-75 { opacity: 0.75 !important; }
+            .course-card-actions .btn-sm { font-size: 0.8rem; padding: 0.2rem 0.4rem; }
+            .fst-italic { font-style: italic!important; }
+        </style>
+}
+
+@section Scripts {
+    @* Không cần script nào ở đây *@
 }

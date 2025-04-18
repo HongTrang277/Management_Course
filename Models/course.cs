@@ -37,9 +37,12 @@ namespace ManagementCenter.Models
         [Display(Name = "Lịch Học")]
         public string? schedule { get; set; }
 
+        [StringLength(1024)] // Cho phép URL dài
+        [DataType(DataType.Url)] // Gợi ý kiểu dữ liệu là URL
+        [Display(Name = "Link Ảnh Nền")]
+        public string? ImageUrl { get; set; }
 
 
-        
 
         public virtual ICollection<registration> registrations { get; set; } = new List<registration>();
     }

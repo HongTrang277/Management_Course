@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
+
+
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -10,9 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ManagementCenter</title>
     <script type="importmap"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ManagementCenter.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
     @* --- Sidebar: Full height, fixed, chiều rộng cố định --- *@
@@ -67,7 +73,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "InteractCourse" && ViewContext.RouteData.Values["action"]?.ToString() == "LearningZone" ? "active" : "")"
-                               asp-area="" asp-controller="InteractCourse" asp-action="LearningZone">
+                               asp-area="" asp-controller="InteractCourse" asp-action="MyRegistrations">
                                 Khu vực học tập
                             </a>
                         </li>

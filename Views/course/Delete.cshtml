@@ -45,6 +45,16 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.schedule)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageUrl)
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                     <img src="@Model.ImageUrl" alt="Ảnh nền khóa học" style="max-width: 50px; max-height: 40px; margin-left: 10px; vertical-align: middle;" />
+            }
+        </dd>
     </dl>
     
     <form asp-action="Delete">

@@ -66,7 +66,7 @@ namespace ManagementCenter.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([Bind("course_id,tutor,course_name,start_date,fee,max_capacity,schedule")] course course)
+        public async Task<IActionResult> Create([Bind("course_id,tutor,course_name,start_date,fee,max_capacity,schedule,ImageUrl")] course course)
         {
             ModelState.Remove(nameof(course.registrations));
             if (ModelState.IsValid) // Kiểm tra validation cơ bản trước
@@ -122,7 +122,7 @@ namespace ManagementCenter.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("course_id,tutor,course_name,start_date,fee,max_capacity,schedule")] course course)
+        public async Task<IActionResult> Edit(int id, [Bind("course_id,tutor,course_name,start_date,fee,max_capacity,schedule,ImageUrl")] course course)
         {
             if (id != course.course_id)
             {

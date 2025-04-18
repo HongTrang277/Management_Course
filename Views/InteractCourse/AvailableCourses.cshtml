@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ManagementCenter.Models.course>
+@using System.Globalization;
 @{
     ViewData["Title"] = "Khám phá Khóa học";
     // Lấy danh sách ID các khóa đã đăng ký từ ViewBag
@@ -39,65 +40,81 @@
      <div class="alert alert-warning">@TempData["WarningMessage"]</div>
 }
 
-@* Bạn có thể thay đổi cấu trúc này thành dạng thẻ (card) sau này giống hình ảnh *@
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.course_name)</th>
-            <th>@Html.DisplayNameFor(model => model.tutor)</th>
-            <th>@Html.DisplayNameFor(model => model.start_date)</th>
-            <th>@Html.DisplayNameFor(model => model.fee)</th>
-            <th>Số lượng còn lại</th>
-            <th>Thao tác</th>
-        </tr>
-    </thead>
-    <tbody>
+@if (!Model.Any())
+{
+         <p>Không tìm thấy khóa học nào phù hợp.</p>
+}
+else
+{
+    @* --- BẮT ĐẦU CẤU TRÚC CARD --- *@
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> @* Sử dụng Grid của Bootstrap *@
         @foreach (var item in Model)
         {
+            // --- Tính toán thông tin như trước ---
             int currentRegistrations = registrationCounts.TryGetValue(item.course_id, out var count) ? count : 0;
             int? remainingSlots = item.max_capacity.HasValue ? item.max_capacity.Value - currentRegistrations : (int?)null;
             bool isFull = item.max_capacity.HasValue && remainingSlots.HasValue && remainingSlots.Value <= 0;
             bool isRegisteredByCurrentUser = registeredCourseIds.Contains(item.course_id);
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.course_name)</td>
-                <td>@Html.DisplayFor(modelItem => item.tutor)</td>
-                <td>@item.start_date?.ToString("dd/MM/yyyy")</td>
-                <td>@item.fee?.ToString("N0") VNĐ</td>
-                <td>
-                    @* Hiển thị số lượng còn lại hoặc trạng thái dựa trên biến vừa tính *@
-                    @if (isFull)
-                    {
-                        <span class="text-danger fw-bold">Hết chỗ</span>
-                    }
-                    else if (remainingSlots.HasValue)
-                    {
-                        <span class="fw-bold text-success">@remainingSlots.Value</span>
-                    }
-                    else
-                    {
-                        <span class="text-muted">Không giới hạn</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="CourseDetails" asp-route-id="@item.course_id" class="btn btn-sm btn-info">Xem chi tiết</a>
 
-                    @* Kiểm tra xem sinh viên đã đăng ký khóa này chưa *@
-                    @if (registeredCourseIds.Contains(item.course_id))
-                    {
-                        <span class="badge bg-secondary ms-2">Đã đăng ký</span>
-                        @* Hoặc có thể thêm link vào Khu vực học tập nếu muốn *@
-                        <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="@item.course_id" class="btn btn-sm btn-outline-primary ms-1">Vào học</a>
-                    }
-                    else
-                    {
-                        <form asp-action="Register" method="post" style="display:inline;" class="ms-2">
-                            @Html.AntiForgeryToken() @* Thêm AntiForgeryToken *@
-                            <input type="hidden" name="courseId" value="@item.course_id" />
-                            <button type="submit" class="btn btn-sm btn-success">Đăng ký</button>
-                        </form>
-                    }
-                </td>
-            </tr>
+            // --- Xác định style nền ---
+            string backgroundStyle = !string.IsNullOrEmpty(item.ImageUrl)
+                ? $"background-image: url('{System.Net.WebUtility.HtmlEncode(item.ImageUrl)}');" // Encode URL để tránh lỗi XSS hoặc HTML injection
+                : "background-color: #495057;"; // Màu nền mặc định nếu không có ảnh
+
+                    <div class="col">
+                        <div class="course-card h-100" style="@backgroundStyle"> @* Áp dụng style nền và class CSS *@
+
+                            <div class="course-card-content"> @* Phần nội dung chữ *@
+                                <h5 class="course-card-title">@item.course_name</h5>
+                                <p class="course-card-text">GV: @(item.tutor ?? "N/A")</p>
+                                <p class="course-card-text">Bắt đầu: @item.start_date?.ToString("dd/MM/yyyy")</p>
+                                <p class="course-card-text">Học phí: @(item.fee.HasValue ? item.fee.Value.ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " VNĐ" : "Miễn phí")</p>
+                                <p class="course-card-text">
+                            @if (isFull)
+                            {
+                                <span class="badge bg-danger">Hết chỗ</span>
+                            }
+                            else if (remainingSlots.HasValue)
+                            {
+                                <span class="badge bg-info">Còn @remainingSlots.Value chỗ</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Không giới hạn</span>
+                            }
+                                </p>
+                            </div>
+
+                            <div class="course-card-actions"> @* Phần chứa các nút thao tác *@
+                                <a asp-action="CourseDetails" asp-route-id="@item.course_id" class="btn btn-sm btn-light">Chi tiết</a>
+
+                        @if (isRegisteredByCurrentUser)
+                        {
+                                        <span class="badge bg-secondary ms-1">Đã đăng ký</span>
+                            // Optional: Link to learning zone if applicable and registration is active
+                            // <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="/* Find Registration ID */" class="btn btn-sm btn-outline-light ms-1">Vào học</a>
+                        }
+                        else if (User.Identity.IsAuthenticated && User.IsInRole("Student") && !isFull) // Chỉ hiển thị nút ĐK cho Student, đã login và còn chỗ
+                        {
+                                        <form asp-action="Register" method="post" style="display:inline;" class="ms-1">
+                                @Html.AntiForgeryToken()
+                                            <input type="hidden" name="courseId" value="@item.course_id" />
+                                            <button type="submit" class="btn btn-sm btn-success">Đăng ký</button>
+                                        </form>
+                        }
+                        else if (!User.Identity.IsAuthenticated && !isFull) // Chưa đăng nhập và còn chỗ
+                        {
+                                         <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("AvailableCourses", "InteractCourse", new { searchString = ViewData["CurrentFilter"] })" class="btn btn-sm btn-warning ms-1">Đăng nhập để ĐK</a>
+                        }
+                        else if (isFull)
+                        {
+                                         <button type="button" class="btn btn-sm btn-secondary ms-1" disabled>Hết chỗ</button>
+                        }
+                            </div>
+
+                        </div> @* End course-card *@
+                    </div> @* End col *@
         }
-    </tbody>
-</table>
+        </div>
+    @* --- KẾT THÚC CẤU TRÚC CARD --- *@
+}

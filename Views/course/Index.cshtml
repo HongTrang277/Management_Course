@@ -29,11 +29,12 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.tutor)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.course_name)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tutor)
+            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.start_date)
             </th>
@@ -52,12 +53,13 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.course_name)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.tutor)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.course_name)
-            </td>
+            
             <td>
                 @item.start_date?.ToString("dd/MM/yyyy")
             </td>
@@ -78,9 +80,9 @@
                 @Html.DisplayFor(modelItem => item.schedule)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.course_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.course_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.course_id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.course_id" class="btn btn-sm btn-custom-edit">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.course_id" class="btn btn-sm btn-custom-details ms-1">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.course_id" class="btn btn-sm btn-custom-delete ms-1">Delete</a>
             </td>
         </tr>
 }

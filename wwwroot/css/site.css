@@ -48,13 +48,14 @@ html {
 
 /* Thêm vào wwwroot/css/site.css */
 body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--background-dark); /* Nền tối cho toàn trang */
     color: var(--text-primary); /* Màu chữ mặc định là trắng */
     display: flex; /* Sử dụng flex để layout chính */
     flex-direction: column; /* Sắp xếp theo cột */
     min-height: 100vh; /* Đảm bảo body cao ít nhất bằng màn hình */
-   
 }
+
 
 .sidebar {
     background-color: var(--background-light); /* Dùng biến này để đặt nền tối */
@@ -169,57 +170,399 @@ main {
         text-decoration: none; /* Bỏ gạch chân khi hover */
     }
 
-/* --- Định dạng Card Khóa học của Admin --- */
-/*.admin-course-card {
-    background-color: var(--background-light);*/ /* Nền tối nhẹ */
-    /*border: 1px solid var(--border-color);
-    border-radius: 0.5rem;*/ /* Bo góc nhẹ */
-    /*transition: box-shadow 0.2s ease-in-out;
+.btn-custom-edit,
+.btn-custom-details,
+.btn-custom-delete {
+    color: #fff; /* Màu chữ trắng */
+    border: none;
+    padding: 0.25rem 0.5rem; /* Kích thước padding nhỏ */
+    font-size: 0.875rem; /* Cỡ chữ nhỏ */
+    border-radius: 0.2rem; /* Bo góc nhẹ */
+    text-decoration: none; /* Bỏ gạch chân của link */
+    transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out; /* Hiệu ứng chuyển màu */
+    line-height: 1.5;
+    display: inline-block; /* Cần thiết để padding hoạt động đúng */
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
 }
 
-    .admin-course-card:hover {
-        box-shadow: 0 0.5rem 1rem rgba(127, 90, 240, 0.15) !important;*/ /* Shadow màu tím nhạt khi hover */
-    /*}
+/* Edit Button - Tone tím đậm */
+.btn-custom-edit {
+    background-color: #6f42c1; /* Màu tím của Bootstrap */
+}
+
+    .btn-custom-edit:hover {
+        background-color: #5a379b; /* Tím đậm hơn khi hover */
+        color: #fff;
+    }
+
+/* Details Button - Tone xám đen */
+.btn-custom-details {
+    background-color: #495057; /* Màu xám đen */
+}
+
+    .btn-custom-details:hover {
+        background-color: #343a40; /* Đen hơn khi hover */
+        color: #fff;
+    }
+
+/* Delete Button - Tone đỏ đen (cảnh báo nguy hiểm) */
+.btn-custom-delete {
+    background-color: #dc3545; /* Màu đỏ nguy hiểm */
+    /* Hoặc nếu muốn tím/đen thì dùng màu khác */
+    /* background-color: #343a40; */
+}
+
+    .btn-custom-delete:hover {
+        background-color: #c82333; /* Đỏ đậm hơn khi hover */
+        /* Hoặc nếu muốn tím/đen */
+        /* background-color: #23272b; */
+        color: #fff;
+    }
+
+/* Tùy chỉnh thêm cho bảng */
+.table {
+    border-collapse: separate; /* Cần thiết để chỉ hiển thị border ngang */
+    border-spacing: 0; /* Bỏ khoảng cách giữa các cell */
+    border-top: 1px solid #dee2e6; /* Thêm border top cho bảng */
+}
+
+    .table th,
+    .table td {
+        /* Bỏ border mặc định của Bootstrap nếu cần */
+        /* border: none; */
+        /* Bootstrap 5 table đã tự bỏ border dọc */
+        padding: 0.6rem 0.5rem; /* Chỉnh lại padding nếu muốn */
+    }
+
+    .table thead th {
+        border-bottom-width: 1px; /* Chỉ giữ border bottom cho thead */
+        border-top: 0; /* Bỏ border top của thead */
+        vertical-align: bottom;
+    }
+
+    /* Bỏ border top của hàng đầu tiên trong tbody nếu thead có nền */
+    .table > tbody > tr:first-child > * {
+        border-top: none;
+    }
 
 
-.admin-card-img {
-    height: 160px;*/ /* Chiều cao cố định cho ảnh */
-    /*object-fit: cover;*/ /* Cắt ảnh cho vừa khung */
-/*}
 
-.admin-course-card .card-body {
-    padding: 0.8rem 1rem;*/ /* Giảm padding body một chút */
-/*}
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden; /* Che phần ảnh thừa */
+    position: relative; /* Cần cho overlay */
+    min-height: 200px; /* Chiều cao tối thiểu cho card */
+    background-size: cover; /* Ảnh nền phủ hết card */
+    background-position: center center; /* Căn giữa ảnh nền */
+    color: white; /* Màu chữ mặc định là trắng để nổi bật trên nền tối */
+    display: flex;
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    transition: transform .2s ease-in-out; /* Hiệu ứng khi hover */
+}
 
-.admin-course-card .card-title {
-    color: var(--text-primary);
+    .course-card:hover {
+        transform: translateY(-5px); /* Nhấc card lên một chút khi hover */
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+
+
+    /* Lớp phủ bán trong suốt để chữ dễ đọc hơn */
+    .course-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1.5)); /* Gradient tối dần về dưới */
+        z-index: 1; /* Nằm dưới nội dung */
+    }
+
+    /* Đảm bảo nội dung nằm trên lớp phủ */
+    .course-card > * {
+        position: relative;
+        z-index: 2;
+    }
+
+.course-card-content {
+    padding: 1rem;
+    flex-grow: 1; /* Cho phép nội dung co giãn */
+}
+
+.course-card-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.course-card-text {
+    font-size: 0.9em;
+    margin-bottom: 0.3rem;
+}
+
+.course-card-actions {
+    padding: 0 1rem 1rem 1rem; /* Padding cho khu vực nút */
+    margin-top: auto; /* Đẩy các nút xuống dưới cùng */
+    text-align: right; /* Căn nút sang phải (tùy chọn) */
+}
+
+    /* Điều chỉnh màu nút trên nền tối/ảnh */
+    .course-card-actions .btn-light {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        color: #333;
+    }
+
+    .course-card-actions .btn-success {
+        /* Có thể điều chỉnh thêm nếu cần */
+    }
+
+    .course-card-actions .btn-warning {
+        /* Có thể điều chỉnh thêm nếu cần */
+    }
+
+    .course-card-actions .badge {
+        background-color: rgba(255, 255, 255, 0.7) !important; /* Dùng !important nếu bị ghi đè */
+        color: #333 !important;
+    }
+
+/* ============================ */
+/* Styles for Authentication Pages */
+/* ============================ */
+
+.auth-body {
+    /* Màu nền tối như trong ảnh */
+    background-color: #1f2937; /* Hoặc #2d3748 hoặc màu bạn thích */
+    /* Hoặc dùng ảnh nền */
+    /* background-image: url('../images/your-auth-background.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-attachment: fixed; */
+    font-family: 'Manrope', sans-serif; /* Đảm bảo dùng font đã chọn */
+}
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center; /* Căn container theo chiều ngang */
+    align-items: center; /* Căn container theo chiều dọc */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng màn hình */
+    padding: 2rem 1rem; /* Padding xung quanh container */
+}
+
+.auth-container {
+    background-color: #fff; /* Nền trắng cho container */
+    padding: 2.5rem 2rem; /* Padding bên trong container */
+    border-radius: 0.5rem; /* Bo góc */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.04); /* Đổ bóng */
+    max-width: 420px; /* Chiều rộng tối đa */
+    width: 100%;
+    text-align: center; /* Căn giữa nội dung text */
+}
+
+    .auth-container h1,
+    .auth-container h2 { /* Tiêu đề form */
+        font-size: 1.5rem; /* Cỡ chữ tiêu đề */
+        font-weight: 700; /* Đậm */
+        color: #111827; /* Màu chữ tối */
+        margin-bottom: 0.5rem;
+    }
+
+    .auth-container .auth-subtitle { /* Dòng chào mừng/phụ đề */
+        font-size: 0.9rem;
+        color: #6b7280; /* Màu xám */
+        margin-bottom: 2rem; /* Khoảng cách dưới */
+    }
+
+    /* Định dạng nút đăng nhập bên ngoài (Google, Facebook...) */
+    .auth-container #external-account button,
+    .auth-container .external-login-button { /* Thêm class nếu cần custom nút */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem; /* Khoảng cách giữa icon và chữ */
+        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 0.375rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid #d1d5db; /* Border xám nhạt */
+        background-color: #fff;
+        color: #374151; /* Màu chữ xám đậm */
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .auth-container #external-account button:hover,
+        .auth-container .external-login-button:hover {
+            background-color: #f9fafb; /* Nền hơi xám khi hover */
+        }
+
+        /* Icon (Ví dụ cho Google, cần có thư viện icon như Font Awesome) */
+        .auth-container #external-account button[value='Google']::before,
+        .auth-container .google-icon::before {
+            /* content: "\f1a0"; */ /* Mã icon Google của Font Awesome */
+            /* font-family: "Font Awesome 5 Brands"; */
+            /* font-size: 1.1em; */
+            /* color: #DB4437; */ /* Màu Google */
+        }
+
+/* Đường kẻ "or" */
+.auth-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #9ca3af; /* Màu chữ của "or" */
+    font-size: 0.75rem; /* Cỡ chữ nhỏ */
+    text-transform: uppercase;
+    margin: 1.5rem 0; /* Khoảng cách trên dưới */
+}
+
+    .auth-separator::before,
+    .auth-separator::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid #e5e7eb; /* Màu đường kẻ */
+    }
+
+    .auth-separator:not(:empty)::before {
+        margin-right: .75em;
+    }
+
+    .auth-separator:not(:empty)::after {
+        margin-left: .75em;
+    }
+
+/* Định dạng các trường input */
+.auth-container .form-floating {
+    margin-bottom: 1rem;
+    text-align: left; /* Căn trái label và input */
+}
+
+    .auth-container .form-floating > .form-control {
+        height: calc(3.2rem + 2px); /* Chiều cao input */
+        border-radius: 0.375rem;
+        border-color: #d1d5db;
+        font-size: 0.9rem;
+    }
+
+        .auth-container .form-floating > .form-control:focus {
+            border-color: #6366f1; /* Màu border khi focus (tím) */
+            box-shadow: 0 0 0 0.1rem rgba(99, 102, 241, 0.25);
+        }
+
+    .auth-container .form-floating > label {
+        padding-top: 0.85rem; /* Điều chỉnh padding label */
+        padding-bottom: 0.85rem;
+        font-size: 0.9rem;
+        color: #6b7280;
+    }
+
+/* Nút chính (Continue/Sign In/Sign Up) */
+.auth-container .btn-primary {
+    width: 100%;
+    background-color: #1f2937; /* Màu nền đen/xám đậm */
+    border-color: #1f2937;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-}*/
-
-/* Giới hạn chiều cao và hiển thị dấu ... cho mô tả dài */
-/*.admin-card-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;*/ /* Số dòng tối đa muốn hiển thị */
-    /*-webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: 4.5em;*/ /* Ước lượng chiều cao cho 3 dòng */
-    /*margin-bottom: 0.5rem !important;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem; /* Khoảng cách trên */
+    margin-bottom: 1.5rem; /* Khoảng cách dưới */
+    transition: background-color 0.2s ease;
 }
 
-.admin-course-card .card-footer {
-    background-color: rgba(0,0,0,0.1);*/ /* Nền mờ nhẹ cho footer */
-    /*border-top: 1px solid var(--border-color);
-    padding: 0.75rem 1rem;
-}*/
+    .auth-container .btn-primary:hover {
+        background-color: #111827; /* Đậm hơn khi hover */
+        border-color: #111827;
+    }
 
-/* Đảm bảo màu chữ trên các nút rõ ràng (nếu cần) */
-/*.admin-card-actions .btn-warning {
-    color: #333;*/ /* Chữ đen trên nền vàng */
-/*}
+/* Các link phụ (Forgot password, Sign up...) */
+.auth-container .auth-links p {
+    margin-bottom: 0.5rem;
+}
 
-.admin-card-actions .btn-info {
-    color: white;
-}*/
+.auth-container .auth-links a {
+    font-size: 0.875rem;
+    color: #4f46e5; /* Màu tím/xanh */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .auth-container .auth-links a:hover {
+        text-decoration: underline;
+    }
+
+/* Bỏ phần "Use another service..." mặc định nếu không cần */
+.auth-container .use-other-service {
+    display: none; /* Ẩn đi nếu đã đưa nút Google lên trên */
+}
+
+/* ============================ */
+/* Styles for Authentication Pages */
+/* ============================ */
+
+.auth-body {
+    /* background-color: #1f2937; */ /* --- Comment hoặc xóa dòng này --- */
+    background-color: #ddd6fe; /* Tím rất nhạt */
+    /* --- Thêm ảnh nền --- */
+    /* !! QUAN TRỌNG: Thay 'your-register-background.jpg' bằng tên file ảnh của bạn !! */
+    background-image: url('https://s3.envato.com/files/fff1ef24-e903-400b-8665-7112ee0c009a/inline_image_preview.jpg');
+    background-size: cover; /* Phủ kín màn hình */
+    background-position: center center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn trang */
+    /* ------------------- */
+
+    font-family: 'Manrope', sans-serif;
+}
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    /* Thêm một lớp phủ nhẹ lên toàn bộ wrapper nếu ảnh nền quá sáng */
+     background-color: rgba(0, 0, 0, 0.1); 
+}
+
+.auth-container {
+    padding-top:0px;
+    background-color: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.04);
+    /* --- Thu nhỏ khung đăng ký --- */
+    /* Giảm giá trị max-width từ 420px (hoặc giá trị cũ) xuống nhỏ hơn */
+    /* Ví dụ: giảm xuống 380px hoặc 400px */
+    max-width: 340px;
+    max-height: 600px;
+    height:100%
+    /* -------------------------- */
+
+    width: 100%;
+    text-align: center;
+}
+
+    /* --- Các quy tắc CSS khác cho .auth-container h1, button, input... giữ nguyên --- */
+    .auth-container h1,
+    .auth-container h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.5rem;
+    }
+
+/* ... (giữ nguyên các style khác cho subtitle, external-login-button, auth-separator, form-floating, btn-primary, auth-links ...) ... */
+    .auth-container .auth-subtitle {
+        font-size: 0.85rem; /* Giảm nhẹ cỡ chữ phụ đề */
+        color: #6b7280;
+        margin-bottom: 1.5rem; /* Giảm khoảng cách dưới */
+    }

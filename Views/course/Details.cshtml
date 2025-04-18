@@ -44,6 +44,21 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.schedule)
         </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+         </dt>
+         <dd class = "col-sm-10">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                    <a href="@Model.ImageUrl" target="_blank">@Model.ImageUrl</a>
+                    <br />
+                    <img src="@Model.ImageUrl" alt="Ảnh nền khóa học" style="max-width: 200px; max-height: 150px; margin-top: 10px; border: 1px solid #ccc;" />
+            }
+            else
+            {
+                    <span>(Không có ảnh)</span>
+            }
+         </dd>
     </dl>
 </div>
 <div>

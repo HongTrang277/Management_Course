@@ -103,6 +103,10 @@ namespace ManagementCenter.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("course_id"));
 
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(1024)
+                        .HasColumnType("nvarchar(1024)");
+
                     b.Property<string>("course_name")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -115,14 +119,12 @@ namespace ManagementCenter.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("schedule")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("start_date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("tutor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("course_id");
