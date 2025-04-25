@@ -1,4 +1,7 @@
 ﻿@model ManagementCenter.Models.course
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Chi tiết Khóa học";
     bool isRegistered = ViewBag.IsRegistered ?? false;
@@ -39,25 +42,65 @@
         <dt class="col-sm-3">@Html.DisplayNameFor(model => model.schedule)</dt>
         <dd class="col-sm-9">@Html.DisplayFor(model => model.schedule)</dd>
 
-        @* Thêm các trường thông tin khác của course nếu cần (mô tả, syllabus...) *@
 
     </dl>
 </div>
 <div>
-    @* Nút Đăng ký hoặc thông báo Đã đăng ký *@
-    @if (isRegistered)
+    @if (SignInManager.IsSignedIn(User)) 
     {
-        <span class="badge bg-secondary">Bạn đã đăng ký khóa học này</span>
-        <a asp-action="MyRegistrations" class="btn btn-sm btn-outline-info ms-2">Xem đăng ký của tôi</a>
+        @if (User.IsInRole("Admin"))
+        {
+                    <span class="fst-italic text-muted me-2">(Admin View)</span> @* Chỉ báo đây là view của Admin *@
+                    <a asp-controller="course" asp-action="Edit" asp-route-id="@Model.course_id" class="btn btn-warning btn-sm">
+                         <i class="bi bi-pencil-fill me-1"></i> Chỉnh sửa Khóa học
+                    </a>
+        }
+        else 
+        {
+            @if (isRegistered) // Nếu Student đã đăng ký
+            {
+                            <span class="badge bg-success fs-6 me-2">Bạn đã đăng ký</span>
+                            <a asp-action="MyRegistrations" asp-controller="InteractCourse" class="btn btn-sm btn-outline-info">
+                                 <i class="bi bi-journal-check me-1"></i> Xem đăng ký của tôi
+                             </a>
+            }
+            else // Student CHƯA đăng ký
+            {
+                bool isFull = ViewBag.IsFull ?? false;
+                @if (isFull) // Nếu khóa học đã hết chỗ
+                {
+                                     <button type="button" class="btn btn-secondary" disabled>Đã hết chỗ</button>
+                }
+                else // Khóa học còn chỗ
+                {
+                                     <form asp-action="Register" asp-controller="InteractCourse" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                                         <input type="hidden" name="courseId" value="@Model.course_id" />
+                                         <button type="submit" class="btn btn-success">
+                                             <i class="bi bi-check-circle-fill me-1"></i> Đăng ký ngay
+                                         </button>
+                                     </form>
+                }
+            }
+        }
     }
-    else
+    else 
     {
-        <form asp-action="Register" method="post" style="display:inline;">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="courseId" value="@Model.course_id" />
-            <button type="submit" class="btn btn-success">Đăng ký ngay</button>
-        </form>
+        bool isFull = ViewBag.IsFull ?? false;
+        @if (isFull) 
+        {
+                     <button type="button" class="btn btn-secondary" disabled>Đã hết chỗ</button>
+        }
+        else // Khóa học còn chỗ
+        {
+                     <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("CourseDetails", "InteractCourse", new { id = Model.course_id })" class="btn btn-primary">
+                         <i class="bi bi-box-arrow-in-right me-1"></i> Đăng nhập để đăng ký
+                     </a>
+        }
     }
-    <hr />
-    <a asp-action="AvailableCourses">Quay lại danh sách khóa học</a>
+
+    @* Nút quay lại danh sách luôn hiển thị *@
+    <a asp-action="AvailableCourses" asp-controller="InteractCourse" class="btn btn-sm btn-outline-secondary ms-2 float-end">
+        <i class="bi bi-arrow-left"></i> Quay lại DS Khóa học
+    </a>
 </div>

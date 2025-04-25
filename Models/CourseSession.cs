@@ -13,11 +13,11 @@ namespace ManagementCenter.Models
 
         [Required]
         [Display(Name = "Khóa học")]
-        public int CourseId { get; set; } // Foreign Key
+        public int CourseId { get; set; } 
 
         [Required(ErrorMessage = "Vui lòng chọn ngày trong tuần.")]
         [Display(Name = "Thứ")]
-        public DayOfWeek DayOfWeek { get; set; } // Enum: Sunday=0, Monday=1,...
+        public DayOfWeek DayOfWeek { get; set; } 
 
         [Required(ErrorMessage = "Vui lòng nhập giờ bắt đầu.")]
         [DataType(DataType.Time)]
@@ -26,7 +26,7 @@ namespace ManagementCenter.Models
 
         [DataType(DataType.Time)]
         [Display(Name = "Giờ kết thúc")]
-        public TimeOnly? EndTime { get; set; } // Nullable
+        public TimeOnly? EndTime { get; set; } 
 
         [ForeignKey("CourseId")]
         public virtual course Course { get; set; } = null!;

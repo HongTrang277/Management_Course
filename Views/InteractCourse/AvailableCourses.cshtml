@@ -46,11 +46,9 @@
 }
 else
 {
-    @* --- BẮT ĐẦU CẤU TRÚC CARD --- *@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> @* Sử dụng Grid của Bootstrap *@
         @foreach (var item in Model)
         {
-            // --- Tính toán thông tin như trước ---
             int currentRegistrations = registrationCounts.TryGetValue(item.course_id, out var count) ? count : 0;
             int? remainingSlots = item.max_capacity.HasValue ? item.max_capacity.Value - currentRegistrations : (int?)null;
             bool isFull = item.max_capacity.HasValue && remainingSlots.HasValue && remainingSlots.Value <= 0;
@@ -58,8 +56,8 @@ else
 
             // --- Xác định style nền ---
             string backgroundStyle = !string.IsNullOrEmpty(item.ImageUrl)
-                ? $"background-image: url('{System.Net.WebUtility.HtmlEncode(item.ImageUrl)}');" // Encode URL để tránh lỗi XSS hoặc HTML injection
-                : "background-color: #495057;"; // Màu nền mặc định nếu không có ảnh
+                ? $"background-image: url('{System.Net.WebUtility.HtmlEncode(item.ImageUrl)}');" 
+                : "background-color: #495057;";
 
                     <div class="col">
                         <div class="course-card h-100" style="@backgroundStyle"> @* Áp dụng style nền và class CSS *@
@@ -91,8 +89,6 @@ else
                         @if (isRegisteredByCurrentUser)
                         {
                                         <span class="badge bg-secondary ms-1">Đã đăng ký</span>
-                            // Optional: Link to learning zone if applicable and registration is active
-                            // <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="/* Find Registration ID */" class="btn btn-sm btn-outline-light ms-1">Vào học</a>
                         }
                         else if (User.Identity.IsAuthenticated && User.IsInRole("Student") && !isFull) // Chỉ hiển thị nút ĐK cho Student, đã login và còn chỗ
                         {
@@ -104,7 +100,7 @@ else
                         }
                         else if (!User.Identity.IsAuthenticated && !isFull) // Chưa đăng nhập và còn chỗ
                         {
-                                         <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("AvailableCourses", "InteractCourse", new { searchString = ViewData["CurrentFilter"] })" class="btn btn-sm btn-warning ms-1">Đăng nhập để ĐK</a>
+                                         <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("AvailableCourses", "InteractCourse", new { searchString = ViewData["CurrentFilter"] })" class="btn btn-sm btn-warning ms-1">Đăng ký học</a>
                         }
                         else if (isFull)
                         {
@@ -116,5 +112,4 @@ else
                     </div> @* End col *@
         }
         </div>
-    @* --- KẾT THÚC CẤU TRÚC CARD --- *@
 }

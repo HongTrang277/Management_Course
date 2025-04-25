@@ -1,0 +1,207 @@
+﻿@using System.Globalization 
+@{
+    ViewData["Title"] = "Thống kê";
+    var availableYears = ViewBag.AvailableYears as List<int> ?? new List<int>();
+    var currentYear = DateTime.Now.Year;
+    var currentMonth = DateTime.Now.Month;
+    var vietnameseCulture = new CultureInfo("vi-VN"); // Tạo culture một lần
+}
+
+<div id="stats-filter-bar" class="row g-3 align-items-center mb-4 p-3 bg-light border rounded">
+     <div class="col-auto">
+         <label for="selectDataType" class="col-form-label">Thống kê theo:</label>
+     </div>
+     <div class="col-auto">
+         <select class="form-select form-select-sm" id="selectDataType">
+             <option value="courseReg" selected>Lượt đăng ký khóa học</option>
+             <option value="accountReg">Lượt đăng ký tài khoản</option>
+         </select>
+        @* ------------------------------------- *@
+     </div>
+     <div class="col-auto">
+         <label for="selectYear" class="col-form-label">Năm:</label>
+     </div>
+     <div class="col-auto">
+         <select class="form-select form-select-sm" id="selectYear">
+            @if (!availableYears.Any())
+            {
+                <option value="@currentYear" selected>@currentYear</option>
+            }
+            else
+            {
+                foreach (var year in availableYears)
+                {
+                    <option value="@year" selected="@(year == currentYear)">@year</option>
+                }
+                if (!availableYears.Contains(currentYear))
+                {
+                    <option value="@currentYear" selected>@currentYear</option>
+                }
+            }
+        </select>
+     </div>
+     <div class="col-auto">
+         <label for="selectMonth" class="col-form-label">Tháng:</label>
+     </div>
+     <div class="col-auto">
+         <select class="form-select form-select-sm" id="selectMonth">
+             <option value="0" selected>-- Cả năm --</option>
+            @for (int i = 1; i <= 12; i++)
+            {
+                     <option value="@i">@vietnameseCulture.DateTimeFormat.GetMonthName(i)</option>
+            }
+         </select>
+     </div>
+     <div class="col-auto">
+         <button class="btn btn-primary btn-sm" id="loadStatsButton">
+             <i class="bi bi-bar-chart-line-fill me-1"></i> Xem thống kê
+         </button>
+     </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <i class="bi bi-calendar-event me-1"></i> Thống kê <span id="chartDataTypeLabel">Lượt đăng ký khóa học</span> (<span id="chartTimeRange">Cả năm @currentYear</span>)
+            </div>
+            <div class="card-body">
+                 <div style="min-height: 350px; position: relative;"> @* Tăng chiều cao, thêm relative để đặt lỗi/loading *@
+                    <canvas id="mainChartCanvas"></canvas> @* Đổi ID canvas *@
+                     <div id="statsLoading" class="text-center d-none position-absolute top-50 start-50 translate-middle">
+                         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+                         <p class="mt-2">Đang tải...</p>
+                     </div>
+                     <div id="statsError" class="text-center text-danger d-none position-absolute top-50 start-50 translate-middle">
+                         <i class="bi bi-exclamation-triangle-fill fs-1"></i>
+                         <p class="mt-2 fw-bold">Không thể tải dữ liệu.</p>
+                         <small id="statsErrorMessage"></small>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+        <script>
+            let mainChart = null; 
+
+            const yearSelect = document.getElementById('selectYear');
+            const monthSelect = document.getElementById('selectMonth');
+            const dataTypeSelect = document.getElementById('selectDataType'); 
+            const loadButton = document.getElementById('loadStatsButton');
+            const chartTimeRangeSpan = document.getElementById('chartTimeRange');
+            const chartDataTypeLabelSpan = document.getElementById('chartDataTypeLabel');
+            const loadingIndicator = document.getElementById('statsLoading');
+            const errorIndicator = document.getElementById('statsError');
+            const errorMessageSpan = document.getElementById('statsErrorMessage');
+            const mainChartCanvas = document.getElementById('mainChartCanvas'); 
+
+         
+            function updateChart(year, month, dataType) {
+                const monthValue = parseInt(month);
+                const yearValue = parseInt(year);
+                const selectedDataTypeText = dataTypeSelect.options[dataTypeSelect.selectedIndex].text; 
+
+                if (isNaN(yearValue)) {
+                    showError('Năm không hợp lệ.');
+                    return;
+                }
+
+                showLoading();
+                let apiUrl = `/Statistics/GetStatisticsData?year=${yearValue}&dataType=${dataType}`;
+                let timeRangeText = `Cả năm ${yearValue}`;
+
+                if (monthValue > 0) {
+                    apiUrl += `&month=${monthValue}`;
+                     const monthName = monthSelect.options[monthSelect.selectedIndex].text;
+                     timeRangeText = `${monthName}, ${yearValue}`;
+                }
+
+                chartTimeRangeSpan.textContent = timeRangeText;
+                chartDataTypeLabelSpan.textContent = selectedDataTypeText;
+
+                fetch(apiUrl)
+                    .then(response => response.json()) 
+                    .then(result => {
+                        if (result && result.success) {
+                            showContent();
+                            const chartData = {
+                                labels: result.labels,
+                                datasets: [{
+                                    label: result.chartLabel || selectedDataTypeText, 
+                                    data: result.data,
+                                    fill: true,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    tension: 0.1
+                                }]
+                            };
+                            if (mainChart) { mainChart.destroy(); } 
+                            mainChart = new Chart(mainChartCanvas, { 
+                                type: 'line',
+                                data: chartData,
+                                 options: { 
+                                     responsive: true, maintainAspectRatio: false,
+                                     scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }, 
+                                     plugins: { legend: { display: false } }
+                                }
+                            });
+                        } else {
+                            showError(result.message || 'Không có dữ liệu hoặc có lỗi xảy ra.');
+                            if (mainChart) { mainChart.destroy(); mainChart = null; } 
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching stats:', error);
+                        showError('Lỗi kết nối hoặc xử lý dữ liệu.');
+                        if (mainChart) { mainChart.destroy(); mainChart = null; }
+                    });
+            }
+
+
+            function showLoading() {
+                loadingIndicator.classList.remove('d-none');
+                errorIndicator.classList.add('d-none');
+                mainChartCanvas.style.opacity = '0.3'; // Làm mờ canvas khi loading
+            }
+            function showError(message) {
+                loadingIndicator.classList.add('d-none');
+                errorIndicator.classList.remove('d-none');
+                errorMessageSpan.textContent = message || 'Không thể tải dữ liệu thống kê.';
+                mainChartCanvas.style.opacity = '0.3'; // Giữ mờ canvas khi lỗi
+                 if (mainChart) { mainChart.destroy(); mainChart = null; } // Xóa chart cũ
+            }
+            function showContent() {
+                loadingIndicator.classList.add('d-none');
+                errorIndicator.classList.add('d-none');
+                mainChartCanvas.style.opacity = '1'; // Hiện rõ canvas
+            }
+
+            loadButton.addEventListener('click', () => {
+                const selectedYear = yearSelect.value;
+                const selectedMonth = monthSelect.value;
+                const selectedDataType = dataTypeSelect.value; // Lấy giá trị dataType
+                updateChart(selectedYear, selectedMonth, selectedDataType); // Truyền dataType vào hàm update
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                 const initialYear = yearSelect.value;
+                 const initialMonth = monthSelect.value;
+                 const initialDataType = dataTypeSelect.value; // Lấy dataType ban đầu
+                 updateChart(initialYear, initialMonth, initialDataType); // Truyền dataType ban đầu
+            });
+
+        </script>
+}
+
+@section Styles {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            .card-body div[style*="min-height"] { position: relative; } 
+        </style>
+}

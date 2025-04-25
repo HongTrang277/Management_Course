@@ -21,9 +21,7 @@
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
-    @* --- Sidebar: Full height, fixed, chiều rộng cố định --- *@
     <nav id="sidebarMenu" class="d-md-block sidebar collapse">
-        @* Đã xóa các class cột (col-md-3, col-lg-2) *@
         <div class="position-sticky p sidebar-sticky d-flex flex-column">
             <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
     <img src="~/images/logo.png" alt="Logo" style="height: 24px; width: 24px;">
@@ -37,22 +35,30 @@
                     if (User.IsInRole("Admin"))
                     {
                         // --- Menu cho Admin ---
+
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "course" ? "active" : "")"
                                asp-area="" asp-controller="course" asp-action="Index">
                                 Quản lý Khóa học
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "course" && ViewContext.RouteData.Values["action"]?.ToString() == "Create" ? "active" : "")"
-                               asp-area="" asp-controller="course" asp-action="Create">
-                                Tạo Khóa học
-                            </a>
-                        </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "InteractCourse" && ViewContext.RouteData.Values["action"]?.ToString() == "AvailableCourses" ? "active" : "")"
+                                       asp-area="" asp-controller="InteractCourse" asp-action="AvailableCourses">
+                                        Khám phá
+                                    </a>
+                                </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Statistics" ? "active" : "")"
                                asp-area="" asp-controller="Statistics" asp-action="Index">
                                 Thống kê
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Statistics" ? "active" : "")"
+                               asp-area="" asp-controller="registration" asp-action="Index">
+                                Quản lý đăng ký 
                             </a>
                         </li>
                         <li class="nav-item">
@@ -77,12 +83,7 @@
                                 Khu vực học tập
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "student" && ViewContext.RouteData.Values["action"]?.ToString() == "CompletedCourses" ? "active" : "")"
-                               asp-area="" asp-controller="student" asp-action="CompletedCourses">
-                                Khóa học đã hoàn thành
-                            </a>
-                        </li>
+                     
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["page"]?.ToString().Contains("Manage") ?? false ? "active" : "")"
                                asp-area="Identity" asp-page="/Account/Manage/Index">
@@ -91,7 +92,7 @@
                         </li>
                     }
                 }
-                else // Chưa đăng nhập
+                else 
                 {
                     <li class="nav-item">
                         <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "InteractCourse" && ViewContext.RouteData.Values["action"]?.ToString() == "AvailableCourses" ? "active" : "")"
@@ -110,7 +111,6 @@
         </div>
     </nav>
 
-    @* --- Main Wrapper: Bao gồm Header và Main Content, cần có margin-left trong CSS --- *@
     <div class="main-wrapper">
         @* --- Header: Nằm trong wrapper, không còn fixed-top --- *@
         <header>
@@ -131,11 +131,9 @@
             </nav>
         </header>
 
-        @* --- Main Content Area: Nằm trong wrapper, dưới header --- *@
         <main role="main" class="p-4">
-            @* Có thể dùng p-3 hoặc p-4 tùy ý *@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">@ViewData["Title"]</h1>
+                <h1 class="h2 page-title">@ViewData["Title"]</h1>
             </div>
             @RenderBody()
         </main>

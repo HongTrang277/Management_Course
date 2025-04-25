@@ -12,10 +12,10 @@ namespace ManagementCenter.Models
         public int registration_id { get; set; }
 
         [Display(Name = "Học Viên")]
-        public int student_id { get; set; } // Khóa ngoại, trỏ đến Students.StudentId
+        public int student_id { get; set; }
 
         [Display(Name = "Khóa Học")]
-        public int course_id { get; set; } // Khóa ngoại, trỏ đến Courses.CourseId
+        public int course_id { get; set; } 
 
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
@@ -36,11 +36,11 @@ namespace ManagementCenter.Models
         [Display(Name = "Ngày Hủy")]
         public DateTime? cancellation_date { get; set; }
 
-        // --- Navigation Properties ---
+       
         [ForeignKey("student_id")]
-        public virtual student student { get; set; } = null!;// Trỏ đến Student
+        public virtual student student { get; set; } = null!;
 
         [ForeignKey("course_id")]
-        public virtual course course { get; set; } = null!;// Trỏ đến Course
+        public virtual course course { get; set; } = null!;
     }
 }

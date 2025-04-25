@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ManagementCenter.ValidationAttributes;
 
 namespace ManagementCenter.Models
 {
@@ -21,6 +22,7 @@ namespace ManagementCenter.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [EnsureStartDateIsPresentOrFuture(ErrorMessage = "Ngày khai giảng không được là ngày trong quá khứ.")]
         [Display(Name = "Ngày Bắt Đầu")]
         public DateTime? start_date { get; set; }
 
@@ -37,8 +39,8 @@ namespace ManagementCenter.Models
         [Display(Name = "Lịch Học")]
         public string? schedule { get; set; }
 
-        [StringLength(1024)] // Cho phép URL dài
-        [DataType(DataType.Url)] // Gợi ý kiểu dữ liệu là URL
+        [StringLength(1024)] 
+        [DataType(DataType.Url)] 
         [Display(Name = "Link Ảnh Nền")]
         public string? ImageUrl { get; set; }
 

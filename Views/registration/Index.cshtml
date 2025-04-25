@@ -1,63 +1,107 @@
 ﻿@model IEnumerable<ManagementCenter.Models.registration>
+@using System.Globalization;
 
 @{
-    ViewData["Title"] = "Index";
+    // Đặt lại Title cho trang quản lý đăng ký
+    ViewData["Title"] = "Quản lý Đăng ký Khóa học";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
+@* Có thể thêm nút hoặc bộ lọc ở đây nếu muốn *@
+@*
+<p class="mb-3">
+    <a asp-action="Create" class="btn btn-success btn-sm">Tạo Đăng ký Mới (Thủ công?)</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.registration_date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.completion_date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cancellation_date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.student)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.course)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.registration_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.completion_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cancellation_date)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.course.course_name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.registration_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.registration_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.registration_id">Delete</a>
-            </td>
-        </tr>
+<form method="get" class="mb-3">
+    <div class="input-group input-group-sm">
+         <input type="text" name="searchString" class="form-control form-control-sm bg-dark text-light border-secondary" placeholder="Tìm theo tên HV, email, khóa học..." value="@ViewData["CurrentFilter"]" />
+         <button type="submit" class="btn btn-primary btn-sm">Lọc</button>
+         <a asp-action="Index" class="btn btn-secondary btn-sm ms-1">Xóa lọc</a>
+    </div>
+</form>
+*@
+
+@if (!Model.Any())
+{
+        <p class="text-light">Chưa có lượt đăng ký khóa học nào trong hệ thống.</p>
 }
-    </tbody>
-</table>
+else
+{
+        <div class="table-responsive">
+        @* --- Áp dụng các class cho theme tối giống course/Index --- *@
+            <table class="table table-dark table-striped table-hover table-sm align-middle">
+                <thead>
+                    <tr>
+                    @* Điều chỉnh các cột hiển thị thông tin cần thiết *@
+                        <th class="text-center">ID ĐK</th>
+                        <th class="text-start">Học viên</th>
+                        <th class="text-start">Email HV</th>
+                        <th class="text-start">Khóa học Đăng ký</th>
+                        <th class="text-center">Ngày ĐK</th>
+                        <th class="text-center">Trạng thái</th>
+                        <th class="text-center">Ngày Hủy/HT</th>
+                        <th class="text-end">Thao tác</th> @* Giữ lại cột thao tác *@
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                            <tr>
+                                <td class="text-center">@item.registration_id</td>
+                                <td class="text-start">@(item.student?.ApplicationUser?.full_name ?? "N/A")</td>
+                                <td class="text-start">@(item.student?.ApplicationUser?.Email ?? "N/A")</td>
+                                <td class="text-start">@(item.course?.course_name ?? "N/A")</td>
+                                <td class="text-center">@item.registration_date.ToString("dd/MM/yy HH:mm")</td>
+                                <td class="text-center">
+                            @* Dùng lại logic hiển thị badge trạng thái *@
+                            @if (item.status == "Registered")
+                            {
+                                <span class="badge bg-success">Đang học</span>
+                            }
+                            else if (item.status == "Cancelled")
+                            {
+                                <span class="badge bg-danger">Đã hủy</span>
+                            }
+                            else if (item.status == "Completed")
+                            {
+                                <span class="badge bg-info">Đã hoàn thành</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning">@item.status</span>
+                            }
+                                </td>
+                                <td class="text-center">
+                            @(item.cancellation_date?.ToString("dd/MM/yy") ?? item.completion_date?.ToString("dd/MM/yy") ?? "---")
+                                </td>
+                                <td class="text-end">
+                            @* Sử dụng nút icon giống course/Index *@
+                                    <a asp-action="Details" asp-route-id="@item.registration_id" class="btn btn-sm btn-custom-details" title="Xem Chi tiết Đăng ký"><i class="bi bi-info-circle-fill"></i></a>
+                            @* Thêm các nút khác nếu cần (vd: Edit trạng thái) *@
+                            @* <a asp-action="Edit" asp-route-id="@item.registration_id" class="btn btn-sm btn-custom-edit ms-1" title="Sửa Trạng thái"><i class="bi bi-pencil-fill"></i></a> *@
+                                </td>
+                            </tr>
+                }
+                </tbody>
+            </table>
+        </div> @* End table-responsive *@
+}
+
+@* Section Styles (đảm bảo các style nút và bảng đã có trong site.css hoặc thêm ở đây) *@
+@section Styles {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            /* --- CSS cho các nút custom (.btn-custom-*) --- */
+            /* Đảm bảo các style này tồn tại (trong site.css hoặc ở đây) */
+            .btn-custom-details { background-color: #3b82f6; border-color: #3b82f6; color: white; }
+            .btn-custom-details:hover { background-color: #2563eb; border-color: #2563eb; color: white;}
+            .btn-custom-edit { background-color: #8b5cf6; border-color: #8b5cf6; color: white; } /* Ví dụ nếu có nút Edit */
+            .btn-custom-edit:hover { background-color: #7c3aed; border-color: #7c3aed; color: white;}
+
+            .btn-custom-details, .btn-custom-edit { padding: 0.2rem 0.4rem; font-size: 0.8rem; line-height: 1.2; }
+
+            /* --- CSS tùy chỉnh thêm cho bảng --- */
+            .table.table-sm th, .table.table-sm td { font-size: 0.875rem; vertical-align: middle; }
+            .table-dark a:not(.btn) { color: #a7bdea; }
+            .table-dark a:not(.btn):hover { color: #cadcff; }
+        </style>
+}

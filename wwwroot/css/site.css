@@ -1,15 +1,11 @@
 ﻿:root {
     --primary-color: #987ff3; /* Màu tím chủ đạo (Giữ nguyên hoặc đổi) */
     --secondary-color: #2cb67d; /* Màu xanh lá (Giữ nguyên hoặc đổi) */
-    /* --- MÀU TỐI --- */
     --background-dark: rgb(34, 35, 40); /* Nền tối chính (TỪ CODE CỦA BẠN) */
-    /* Đặt nền sidebar/header giống nền chính cho thống nhất */
     --background-light: rgb(34, 33, 40); /* Nền tối nhẹ hơn (ĐẶT GIỐNG NỀN CHÍNH) */
     --text-primary: rgb(203, 213, 225); /* Màu chữ chính (TỪ CODE CỦA BẠN) */
     --text-secondary: #94a1b2; /* Màu chữ phụ (Giữ nguyên hoặc đổi thành xám nhạt hơn) */
     --border-color: rgb(45, 46, 50); /* Màu viền (Đổi thành tối hơn một chút) */
-    /* Hoặc giữ màu cũ: --border-color: #444; */
-    /* Màu hover mặc định cho link */
     --bs-link-hover-color: var(--primary-color);
 }
 
@@ -46,7 +42,6 @@ html {
   text-align: start;
 }
 
-/* Thêm vào wwwroot/css/site.css */
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--background-dark); /* Nền tối cho toàn trang */
@@ -77,21 +72,16 @@ body {
     }
 }
 
-/* Đẩy menu trong sidebar xuống */
 .sidebar .nav.flex-column {
     margin-top: 2.5rem; /* <<< THÊM DÒNG NÀY - Điều chỉnh giá trị 2.5rem cho phù hợp */
-    /* Ví dụ: 2rem, 3rem, 40px, ... */
 }
 
 /* Style cơ bản cho link menu sidebar */
 .sidebar .nav-link {
     font-weight: 400;
-    /* color: var(--text-secondary); */ /* Bỏ màu cũ */
-    /*color: var(--primary-color);*/ /* <<< Đổi thành màu tím */
     color: var(--text-secondary);
 
     padding: .75rem 1rem;
-    /* border-right: 3px solid transparent; */ /* <<< Xóa hoặc comment dòng này */
     border: 2px solid transparent; /* <<< THÊM: Border trong suốt giữ chỗ */
     border-radius: 0.75rem; /* <<< TÙY CHỌN: Bo góc nhẹ */
     transition: all 0.15s ease-in-out; /* <<< TÙY CHỌN: Hiệu ứng chuyển động mượt */
@@ -222,7 +212,11 @@ main {
         color: #fff;
     }
 
-/* Tùy chỉnh thêm cho bảng */
+.page-title {
+    color: #a779e9; /* Một màu tím sáng vừa phải */
+    font-weight: 600; /* Tùy chọn: làm chữ đậm hơn một chút */
+}
+
 .table {
     border-collapse: separate; /* Cần thiết để chỉ hiển thị border ngang */
     border-spacing: 0; /* Bỏ khoảng cách giữa các cell */
@@ -331,18 +325,12 @@ main {
         color: #333 !important;
     }
 
-/* ============================ */
-/* Styles for Authentication Pages */
-/* ============================ */
+
 
 .auth-body {
     /* Màu nền tối như trong ảnh */
     background-color: #1f2937; /* Hoặc #2d3748 hoặc màu bạn thích */
-    /* Hoặc dùng ảnh nền */
-    /* background-image: url('../images/your-auth-background.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center center; */
-    /* background-attachment: fixed; */
+ 
     font-family: 'Manrope', sans-serif; /* Đảm bảo dùng font đã chọn */
 }
 
@@ -403,16 +391,10 @@ main {
             background-color: #f9fafb; /* Nền hơi xám khi hover */
         }
 
-        /* Icon (Ví dụ cho Google, cần có thư viện icon như Font Awesome) */
         .auth-container #external-account button[value='Google']::before,
         .auth-container .google-icon::before {
-            /* content: "\f1a0"; */ /* Mã icon Google của Font Awesome */
-            /* font-family: "Font Awesome 5 Brands"; */
-            /* font-size: 1.1em; */
-            /* color: #DB4437; */ /* Màu Google */
         }
 
-/* Đường kẻ "or" */
 .auth-separator {
     display: flex;
     align-items: center;
@@ -483,7 +465,6 @@ main {
         border-color: #111827;
     }
 
-/* Các link phụ (Forgot password, Sign up...) */
 .auth-container .auth-links p {
     margin-bottom: 0.5rem;
 }
@@ -504,15 +485,10 @@ main {
     display: none; /* Ẩn đi nếu đã đưa nút Google lên trên */
 }
 
-/* ============================ */
-/* Styles for Authentication Pages */
-/* ============================ */
+
 
 .auth-body {
-    /* background-color: #1f2937; */ /* --- Comment hoặc xóa dòng này --- */
     background-color: #ddd6fe; /* Tím rất nhạt */
-    /* --- Thêm ảnh nền --- */
-    /* !! QUAN TRỌNG: Thay 'your-register-background.jpg' bằng tên file ảnh của bạn !! */
     background-image: url('https://s3.envato.com/files/fff1ef24-e903-400b-8665-7112ee0c009a/inline_image_preview.jpg');
     background-size: cover; /* Phủ kín màn hình */
     background-position: center center; /* Căn giữa ảnh */
@@ -566,3 +542,112 @@ main {
         color: #6b7280;
         margin-bottom: 1.5rem; /* Giảm khoảng cách dưới */
     }
+
+/* --- CSS MỚI CHO PLACEHOLDER VÀ NÚT SEARCH --- */
+
+/* Đổi màu placeholder của input nền tối */
+.form-control.bg-dark::placeholder {
+    color: #adb5bd; /* Màu trắng đục / xám nhạt */
+    opacity: 1; /* Đảm bảo placeholder rõ ràng */
+}
+/* Trình duyệt khác */
+.form-control.bg-dark::-webkit-input-placeholder {
+    color: #adb5bd;
+}
+
+.form-control.bg-dark::-moz-placeholder {
+    color: #adb5bd;
+    opacity: 1;
+}
+
+.form-control.bg-dark:-ms-input-placeholder {
+    color: #adb5bd;
+}
+
+.form-control.bg-dark::-ms-input-placeholder {
+    color: #adb5bd;
+}
+
+/* Đổi màu nút Search thành màu tím */
+.btn-search-custom {
+    background-color: #6f42c1; /* Màu tím chuẩn của Bootstrap */
+    border-color: #6f42c1;
+    color: #fff; /* Chữ trắng */
+}
+
+    .btn-search-custom:hover {
+        background-color: #5a379b; /* Tím đậm hơn khi hover */
+        border-color: #563d7c;
+        color: #fff;
+    }
+
+
+.btn-purple-create {
+    color: #fff; 
+    background-color: #6f42c1; /* Màu tím chuẩn BS */
+    border-color: #6f42c1;
+    /* Các thuộc tính khác của .btn và .btn-sm sẽ được kế thừa */
+}
+
+    .btn-purple-create:hover {
+        color: #fff;
+        background-color: #5a379b; /* Tím đậm hơn khi hover */
+        border-color: #563d7c;
+    }
+
+</style >
+ul.navbar-nav li.nav-item a#manage.nav-link { /* Sử dụng ID hoặc selector đủ cụ thể */
+    color: #c084fc; /* <<< Màu tím nhạt */
+    font-weight: 500; /* Tùy chọn: làm chữ rõ hơn chút */
+}
+
+ul.navbar-nav li.nav-item form#logoutForm button#logout.nav-link { /* Sử dụng ID hoặc selector đủ cụ thể */
+    color: #c084fc; /* <<< Màu tím nhạt */
+    font-weight: 500;
+    padding: 0; /* Reset padding của button nếu cần */
+    vertical-align: baseline; /* Đảm bảo thẳng hàng với link Hello */
+}
+
+
+#stats-filter-bar .col-form-label {
+    color: #8b5cf6; /* <<< Màu tím nhạt (chọn mã màu bạn thích) */
+    font-weight: 500; /* Tùy chọn: Làm chữ đậm hơn chút */
+}
+
+</style >
+.card.bg-dark {
+    background-color: #8399d2 !important; /* <<< Màu tối nhưng sáng hơn #343a40 */
+    border-color: #6c757d !important; /* Có thể chỉnh màu viền nếu muốn */
+}
+
+.card.bg-dark .card-header {
+    background-color: rgba(255, 255, 255, 0.06); /* Sáng hơn một chút so với nền card mới */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff; /* Đảm bảo chữ header vẫn sáng */
+}
+
+.card.bg-dark .card-body.text-light {
+    color: #f8f9fa !important; /* Màu trắng nhạt */
+}
+
+    .card.bg-dark .card-body.text-light dt {
+        color: #adb5bd; /* Màu xám nhạt cho label <dt> */
+        font-weight: 600; /* Làm đậm label */
+    }
+
+    .card.bg-dark .card-body.text-light dd {
+        color: #f8f9fa; /* Màu trắng nhạt cho value <dd> */
+    }
+    .card.bg-dark .card-body.text-light a {
+        color: #a7bdea;
+    }
+
+        .card.bg-dark .card-body.text-light a:hover {
+            color: #cadcff;
+        }
+
+/* --- Các CSS khác giữ nguyên --- */
+.page-title { /* ... */
+}
+
+</style >

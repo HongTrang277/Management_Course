@@ -3,58 +3,6 @@
   "WorkspaceRootPath": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\myregistrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\myregistrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\learningzone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\learningzone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\interactcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\interactcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -63,24 +11,24 @@
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\roleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\roleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\availablecourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\availablecourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\statistics\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\statistics\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -91,44 +39,12 @@
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\Migrations\\20250417232100_AddImageUrlToCourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20250417232100_AddImageUrlToCourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\registrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\registrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\validationattributes\\ensurestartdateispresentorfutureattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:validationattributes\\ensurestartdateispresentorfutureattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,32 +67,48 @@
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:models\\coursesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\roleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\roleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\interactcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\interactcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\index1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\index1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\registration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -189,6 +121,82 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\registration\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\registration\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\myregistrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\myregistrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\learningzone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\learningzone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\coursedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\interactcourse\\availablecourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\interactcourse\\availablecourses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\registrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\registrations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\index1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\index1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\areas\\identity\\pages\\account\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:areas\\identity\\pages\\account\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\migrations\\20250416114255_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -220,6 +228,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\migrations\\20250416132229_removestudentcredentialsandlinktouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\migrations\\20250416132229_removestudentcredentialsandlinktouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|d:\\kiki\\dut\\sem4\\sem4_hch\\dotnet\\code\\managementcenter\\data\\migrations\\20250417232100_addimageurltocourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF5CAFEA-5D04-4903-8B73-8FF3AD755043}|ManagementCenter.csproj|solutionrelative:data\\migrations\\20250417232100_addimageurltocourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -229,7 +241,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 56,
           "Children": [
             {
               "$type": "Bookmark",
@@ -244,16 +256,68 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Statistics\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Statistics\\Index.cshtml",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Statistics\\Index.cshtml",
+              "RelativeToolTip": "Views\\Statistics\\Index.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwM4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-18T02:36:31.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 43,
+              "Title": "StatisticsController.cs",
+              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\StatisticsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StatisticsController.cs",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\StatisticsController.cs",
+              "RelativeToolTip": "Controllers\\StatisticsController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwDMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T02:36:17.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAEAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-18T02:23:49.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-18T02:11:39.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EnsureStartDateIsPresentOrFutureAttribute.cs",
+              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\ValidationAttributes\\EnsureStartDateIsPresentOrFutureAttribute.cs",
+              "RelativeDocumentMoniker": "ValidationAttributes\\EnsureStartDateIsPresentOrFutureAttribute.cs",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\ValidationAttributes\\EnsureStartDateIsPresentOrFutureAttribute.cs",
+              "RelativeToolTip": "ValidationAttributes\\EnsureStartDateIsPresentOrFutureAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T01:54:32.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
@@ -261,12 +325,11 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-18T00:41:46.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T00:41:46.686Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 44,
               "Title": "site.js",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
@@ -274,12 +337,11 @@
               "RelativeToolTip": "wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-18T00:24:22.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T00:24:22.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 47,
               "Title": "_AuthLayout.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\_AuthLayout.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\_AuthLayout.cshtml",
@@ -287,12 +349,11 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\_AuthLayout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-18T00:15:35.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T00:15:35.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 58,
               "Title": "20250417232100_AddImageUrlToCourse.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\Migrations\\20250417232100_AddImageUrlToCourse.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250417232100_AddImageUrlToCourse.cs",
@@ -300,220 +361,204 @@
               "RelativeToolTip": "Data\\Migrations\\20250417232100_AddImageUrlToCourse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T23:21:00.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T23:21:00.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml.css",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAwDAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T20:32:14.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T20:32:14.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 8,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Edit.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Edit.cshtml",
               "RelativeToolTip": "Views\\course\\Edit.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAmwDAAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T15:38:45.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T15:38:45.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 7,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Details.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Details.cshtml",
               "RelativeToolTip": "Views\\course\\Details.cshtml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAmwDwAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T15:38:30.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T15:38:30.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Delete.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Delete.cshtml",
               "RelativeToolTip": "Views\\course\\Delete.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwC0AAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T15:38:15.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T15:38:15.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 13,
               "Title": "CourseViewModel.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseViewModel.cs",
               "RelativeDocumentMoniker": "Models\\CourseViewModel.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseViewModel.cs",
               "RelativeToolTip": "Models\\CourseViewModel.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:28:23.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T15:28:23.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 14,
               "Title": "CourseSessionInputModel.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseSessionInputModel.cs",
               "RelativeDocumentMoniker": "Models\\CourseSessionInputModel.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseSessionInputModel.cs",
               "RelativeToolTip": "Models\\CourseSessionInputModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T15:25:45.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T15:25:45.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 37,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Create.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Create.cshtml",
               "RelativeToolTip": "Views\\course\\Create.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADUAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T14:49:03.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T14:49:03.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 15,
               "Title": "CourseSession.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseSession.cs",
               "RelativeDocumentMoniker": "Models\\CourseSession.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\CourseSession.cs",
               "RelativeToolTip": "Models\\CourseSession.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwCEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T14:34:35.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 2,
               "Title": "RoleInitializer.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\RoleInitializer.cs",
               "RelativeDocumentMoniker": "Data\\RoleInitializer.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\RoleInitializer.cs",
               "RelativeToolTip": "Data\\RoleInitializer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T10:09:09.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T10:09:09.027Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "InteractCourseController.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\InteractCourseController.cs",
               "RelativeDocumentMoniker": "Controllers\\InteractCourseController.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\InteractCourseController.cs",
               "RelativeToolTip": "Controllers\\InteractCourseController.cs",
-              "ViewState": "AgIAAAABAAAAAAAAAAAAwFABAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAUwAwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T21:15:42.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T21:15:42.043Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 36,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Index.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Index.cshtml",
               "RelativeToolTip": "Views\\course\\Index.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAFMAAAB+AAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAwH4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T02:36:11.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T02:36:11.215Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Registrations.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Registrations.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Registrations.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Registrations.cshtml",
               "RelativeToolTip": "Views\\course\\Registrations.cshtml",
-              "ViewState": "AgIAACUAAAAAAAAAAAAmwD8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T02:32:12.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T02:32:12.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "CourseDetails.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\CourseDetails.cshtml",
               "RelativeDocumentMoniker": "Views\\InteractCourse\\CourseDetails.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\CourseDetails.cshtml",
               "RelativeToolTip": "Views\\InteractCourse\\CourseDetails.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwD4AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAADsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T21:36:21.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T21:36:21.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 31,
               "Title": "LearningZone.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\LearningZone.cshtml",
               "RelativeDocumentMoniker": "Views\\InteractCourse\\LearningZone.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\LearningZone.cshtml",
               "RelativeToolTip": "Views\\InteractCourse\\LearningZone.cshtml",
-              "ViewState": "AgIAAMsAAAAAAAAAAAAEwNkAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T21:28:32.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T21:28:32.439Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 30,
               "Title": "MyRegistrations.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\MyRegistrations.cshtml",
               "RelativeDocumentMoniker": "Views\\InteractCourse\\MyRegistrations.cshtml",
-              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\MyRegistrations.cshtml*",
-              "RelativeToolTip": "Views\\InteractCourse\\MyRegistrations.cshtml*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAUwGQAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\MyRegistrations.cshtml",
+              "RelativeToolTip": "Views\\InteractCourse\\MyRegistrations.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAGYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T21:27:22.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T21:27:22.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 33,
               "Title": "AvailableCourses.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\AvailableCourses.cshtml",
               "RelativeDocumentMoniker": "Views\\InteractCourse\\AvailableCourses.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\InteractCourse\\AvailableCourses.cshtml",
               "RelativeToolTip": "Views\\InteractCourse\\AvailableCourses.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAADwv3IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T21:26:17.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T21:26:17.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 52,
               "Title": "dbo.AspNetUserTokens.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.AspNetUserTokens.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.AspNetUserTokens.sql",
@@ -522,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 51,
               "Title": "dbo.students.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.students.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.students.sql",
@@ -531,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 53,
               "Title": "dbo.AspNetUsers.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.AspNetUsers.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.AspNetUsers.sql",
@@ -540,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 46,
               "Title": "Logout.cshtml.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
@@ -548,12 +593,11 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T20:57:45.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T20:57:45.913Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 54,
               "Title": "ManagementCenter",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\ManagementCenter.csproj",
               "RelativeDocumentMoniker": "ManagementCenter.csproj",
@@ -564,33 +608,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 40,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T15:16:37.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T15:16:37.174Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 9,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AgIAAA4BAAAAAAAAAAAqwCYBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAowPoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T15:16:37.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 45,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -598,38 +641,35 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAADwv4QAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T15:16:37.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T15:16:37.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 42,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T14:47:44.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T14:47:44.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 24,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T14:43:57.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T14:43:57.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 48,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
@@ -641,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "20250416132229_RemoveStudentCredentialsAndLinkToUser.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\Migrations\\20250416132229_RemoveStudentCredentialsAndLinkToUser.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250416132229_RemoveStudentCredentialsAndLinkToUser.cs",
@@ -653,19 +693,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\registration\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\registration\\Index.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\registration\\Index.cshtml",
               "RelativeToolTip": "Views\\registration\\Index.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-16T13:21:24.379Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 28,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\registration\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\registration\\Details.cshtml",
@@ -677,71 +717,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 29,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\registration\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\registration\\Delete.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\registration\\Delete.cshtml",
               "RelativeToolTip": "Views\\registration\\Delete.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-16T13:20:56.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\student\\Index.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Index.cshtml",
               "RelativeToolTip": "Views\\student\\Index.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAmwDYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T13:02:13.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:02:13.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 20,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\student\\Edit.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Edit.cshtml",
               "RelativeToolTip": "Views\\student\\Edit.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T13:02:03.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:02:03.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 21,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\student\\Details.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Details.cshtml",
               "RelativeToolTip": "Views\\student\\Details.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAmwDoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T13:01:56.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:01:56.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 22,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\student\\Delete.cshtml",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Delete.cshtml",
               "RelativeToolTip": "Views\\student\\Delete.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T13:01:47.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:01:47.657Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 23,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\student\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\student\\Create.cshtml",
@@ -749,12 +785,11 @@
               "RelativeToolTip": "Views\\student\\Create.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAmwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T13:01:34.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T13:01:34.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 35,
               "Title": "Index1.cshtml",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\course\\Index1.cshtml",
               "RelativeDocumentMoniker": "Views\\course\\Index1.cshtml",
@@ -762,51 +797,47 @@
               "RelativeToolTip": "Views\\course\\Index1.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T12:29:16.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T12:29:16.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "registrationController.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\registrationController.cs",
               "RelativeDocumentMoniker": "Controllers\\registrationController.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\registrationController.cs",
               "RelativeToolTip": "Controllers\\registrationController.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAqwKoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T12:28:13.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T12:28:13.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "studentController.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\studentController.cs",
               "RelativeDocumentMoniker": "Controllers\\studentController.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\studentController.cs",
               "RelativeToolTip": "Controllers\\studentController.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAqwKYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T12:27:19.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T12:27:19.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 4,
               "Title": "courseController.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\courseController.cs",
               "RelativeDocumentMoniker": "Controllers\\courseController.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Controllers\\courseController.cs",
               "RelativeToolTip": "Controllers\\courseController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwHwAAACGAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAQwDsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T12:25:03.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T12:25:03.533Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "dbo.registrations.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.registrations.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.registrations.sql",
@@ -815,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 55,
               "Title": "dbo.courses.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.courses.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/LAPTOP_2JN55Q3P/training_center_db/True/SqlTable/dbo.courses.sql",
@@ -824,7 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "20250416114255_InitialCreate.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\Migrations\\20250416114255_InitialCreate.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20250416114255_InitialCreate.cs",
@@ -836,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
@@ -844,38 +875,36 @@
               "RelativeToolTip": "Models\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:37:07.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:37:07.808Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAmwFMAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T11:35:45.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:34:50.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:34:50.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -887,110 +916,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 12,
               "Title": "registration.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\registration.cs",
               "RelativeDocumentMoniker": "Models\\registration.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\registration.cs",
               "RelativeToolTip": "Models\\registration.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAwC0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwCsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:25:19.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:25:19.08Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 11,
               "Title": "student.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\student.cs",
               "RelativeDocumentMoniker": "Models\\student.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\student.cs",
               "RelativeToolTip": "Models\\student.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAwwDMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwBUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:24:15.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T11:24:15.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "course.cs",
               "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\course.cs",
               "RelativeDocumentMoniker": "Models\\course.cs",
               "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Models\\course.cs",
               "RelativeToolTip": "Models\\course.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAADwvywAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAiwCoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T11:22:44.856Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 100,
-      "FloatingWindowState": {
-        "Id": "f8ad9dd4-0bc8-41e9-ab27-92756f29ca08",
-        "Display": 0,
-        "X": -338,
-        "Y": 217,
-        "Width": 1464,
-        "Height": 449,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "WhenOpened": "2025-04-16T11:22:44.856Z"
+            },
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAO8BAAAAAwAAAAAQwBICAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T20:11:17.12Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 100,
-      "FloatingWindowState": {
-        "Id": "234b5997-6819-4465-9775-52e6d71056f0",
-        "Display": 0,
-        "X": -359,
-        "Y": 306,
-        "Width": 1464,
-        "Height": 449,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\kiki\\DUT\\SEM4\\SEM4_hch\\DotNet\\Code\\ManagementCenter\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T02:49:06.667Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

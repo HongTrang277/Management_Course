@@ -3,8 +3,8 @@
 
 @{
     ViewData["Title"] = "Khu vực học tập";
-    // Không cần lấy ngày hôm nay nữa nếu không tính toán gì liên quan
-    // var today = DateTime.Now.Date;
+    
+    var today = DateTime.Now.Date;
 }
 
 @* Phần TempData và kiểm tra Model trống giữ nguyên *@
@@ -59,7 +59,6 @@ else
                             }
                                 </p>
 
-                        @* --- ĐÃ XÓA THANH TIẾN ĐỘ (PROGRESS BAR) --- *@
 
                         @if (item.status == "Cancelled" && item.cancellation_date.HasValue)
                         {
@@ -72,23 +71,40 @@ else
                                  <a asp-action="CourseDetails" asp-controller="InteractCourse" asp-route-id="@item.course_id" class="btn btn-sm btn-light" title="Xem chi tiết khóa học">
                                      <i class="bi bi-info-circle"></i> Chi tiết
                                  </a>
+                        @{
+                            // Kiểm tra xem khóa học có ngày bắt đầu không VÀ ngày hiện tại có trước ngày bắt đầu không
+                            bool canCancel = item.course?.start_date.HasValue == true &&
+                                             today < item.course.start_date.Value.Date; // Dùng biến today đã khai báo ở đầu file
+                        }
 
-                        @* Chỉ hiển thị nút "Tiếp tục học" nếu đang học (Registered) *@
+                        @if (canCancel) // Chỉ hiển thị nút Hủy nếu điều kiện canCancel là true
+                        {
+                                            <form asp-action="CancelRegistration" asp-controller="InteractCourse" method="post" style="display:inline;" class="ms-1">
+                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="registrationId" value="@item.registration_id" />
+                                                <button type="submit" class="btn btn-sm btn-outline-warning" onclick="return confirm('Bạn chắc chắn muốn hủy đăng ký khóa học này?');" title="Hủy đăng ký (Trước ngày khai giảng)">
+                                                     <i class="bi bi-x-circle"></i> Hủy
+                                                 </button>
+                                            </form>
+                        }
+                        else // Trường hợp không được phép hủy (đã/đang diễn ra hoặc chưa có ngày KG)
+                        {
+                                            <span class="ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Không thể hủy khi khóa học đã bắt đầu hoặc sắp diễn ra.">
+                                                 <button type="button" class="btn btn-sm btn-outline-secondary" disabled><i class="bi bi-x-circle"></i> Hủy</button>
+                                            </span>
+                        }
                         @if (item.status == "Registered")
                         {
-                            @* Nút vào khu vực học tập chi tiết *@
                                         <a asp-action="LearningZone" asp-controller="InteractCourse" asp-route-id="@item.registration_id" class="btn btn-sm btn-purple ms-1" title="Vào học">
                                             <i class="bi bi-play-circle-fill"></i> Tiếp tục học
                                         </a>
-                            @* --- NÚT HỦY ĐÃ BỊ XÓA --- *@
                         }
-                        @* Có thể thêm nút khác cho trạng thái "Completed" *@
 
-                            </div> @* End course-card-actions *@
+                            </div>
 
-                        </div> @* End course-card *@
-                    </div> @* End col *@
-        } @* End foreach *@
+                        </div> 
+                    </div>
+        } 
         </div> @* End row *@
 }
 

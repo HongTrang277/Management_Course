@@ -5,32 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagementCenter.Models
 {
-    [Table("students")] // Đặt lại tên bảng nếu muốn
+    [Table("students")] 
     public class student
     {
         [Key]
         public int student_id { get; set; }
 
-        //// --- Thông tin đăng nhập ---
-        //[Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
-        //[StringLength(100)]
-        //[Display(Name = "Tên đăng nhập")]
-        //public string user_name { get; set; }
-
-        //[Required(ErrorMessage = "Mật khẩu là bắt buộc")]
-        //[StringLength(255)] // Đủ dài cho mật khẩu đã băm
-        //                    // Quan trọng: Thuộc tính này nên lưu trữ MẬT KHẨU ĐÃ BĂM (HASHED), không phải mật khẩu gốc.
-        //public string password_hash { get; set; }
-
-        // --- THÊM HOẶC ĐẢM BẢO CÓ CÁC DÒNG SAU ---
-        [Required] // Khóa ngoại không được null
+       
+        [Required]
         [Display(Name = "User Account")]
-        public required string ApplicationUserId { get; set; } // Khóa ngoại trỏ đến Id của ApplicationUser
+        public required string ApplicationUserId { get; set; } 
 
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ApplicationUser { get; set; } = null!;
 
-        // --- Thông tin Profile ---
+      
 
         [ForeignKey("user_id")]
         public virtual ApplicationUser user { get; set; }
@@ -45,8 +34,7 @@ namespace ManagementCenter.Models
         [Display(Name = "Email")]
         public string email { get; set; }
 
-        // --- Navigation Properties ---
-        // Một Student có nhiều Registration
+       
         public virtual ICollection<registration> registrations { get; set; } = new List<registration>();
     }
 }

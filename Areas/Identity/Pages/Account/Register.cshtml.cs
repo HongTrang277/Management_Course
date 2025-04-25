@@ -52,29 +52,17 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
             _context = context;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+        
         [BindProperty]
         public InputModel Input { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+       
         public string ReturnUrl { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+       
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+       
         public class InputModel
         {
             /// <summary>
@@ -92,10 +80,7 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+           
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -106,10 +91,7 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
             [Phone]
             public string PhoneNumber { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+        
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
@@ -117,10 +99,7 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
         }
 
 
-        // Inject ApplicationDbContext nếu bạn muốn tạo student profile ngay lúc đăng ký
-        // private readonly ApplicationDbContext _context;
-        // Nhớ thêm ApplicationDbContext vào constructor:
-        // public RegisterModel(..., ApplicationDbContext context) { ..., _context = context; }
+      
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
@@ -133,18 +112,14 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
-                // Gán giá trị thuộc tính tùy chỉnh TRƯỚC KHI LƯU
                 user.full_name = Input.FullName;
-                user.PhoneNumber = Input.PhoneNumber; // Gán cả PhoneNumber nếu ApplicationUser có thuộc tính này
-                // user.birthday = Input.BirthDay; // Gán nếu có
+                user.PhoneNumber = Input.PhoneNumber; 
 
                 IdentityResult result = null; // Khai báo ngoài try để có thể dùng sau này
                 try
                 {
-                    // Đặt breakpoint ở đây để kiểm tra 'user' lần cuối nếu muốn
                     result = await _userManager.CreateAsync(user, Input.Password); // <<< Gọi CreateAsync bên trong try
 
-                    // Code Debug.WriteLine sẽ chỉ chạy nếu CreateAsync không ném Exception
                     Debug.WriteLine($"DEBUG: CreateAsync Result - Succeeded: {result?.Succeeded}");
                     if (result != null && !result.Succeeded)
                     {
@@ -155,34 +130,28 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                         }
                     }
                 }
-                catch (DbUpdateException dbEx) // <<< BẮT LỖI DATABASE KHI LƯU
+                catch (DbUpdateException dbEx) 
                 {
-                    // !!!!!!!!!! ĐẶT BREAKPOINT NGAY ĐÂY !!!!!!!!!!
-                    // KIỂM TRA dbEx.InnerException.Message
 
                     string innerErrorMessage = dbEx.InnerException?.Message ?? dbEx.Message;
                     _logger?.LogError(dbEx, $"DbUpdateException saving user: {innerErrorMessage}");
                     ModelState.AddModelError(string.Empty, "Database error occurred: " + innerErrorMessage);
-                    return Page(); // Trả về trang ngay khi có lỗi DB để hiển thị lỗi
+                    return Page();
                 }
                 catch (Exception ex) // <<< Bắt các lỗi khác
                 {
-                    // Đặt breakpoint ở đây nếu cần
                     _logger?.LogError(ex, "Unexpected error during registration.");
                     ModelState.AddModelError(string.Empty, "An unexpected error occurred.");
-                    return Page(); // Trả về trang ngay khi có lỗi khác
+                    return Page(); 
                 }
 
-                // Chỉ xử lý tiếp nếu CreateAsync không bị Exception VÀ result không null
                 if (result != null)
                 {
                     if (result.Succeeded)
                     {
                         _logger.LogInformation("User created a new account with password.");
 
-                        // ==========================================================
-                        // == THÊM VAI TRÒ "Student" CHO NGƯỜI DÙNG MỚI TẠI ĐÂY ==
-                        // ==========================================================
+                    
                         try
                         {
                             // Đảm bảo vai trò "Student" đã tồn tại (thông qua seeding trong Program.cs)
@@ -197,23 +166,16 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                                 foreach (var error in roleResult.Errors)
                                 {
                                     _logger.LogError($"- Role Assignment Error: {error.Code} - {error.Description}");
-                                    // Có thể thêm lỗi vào ModelState nếu việc gán vai trò là bắt buộc
-                                    // ModelState.AddModelError(string.Empty, $"Failed to assign role: {error.Description}");
+                                   
                                 }
-                                // Quyết định xem có nên tiếp tục nếu gán vai trò lỗi không?
-                                // Nếu việc gán vai trò thất bại là nghiêm trọng, có thể return Page(); ở đây
+                             
                             }
                         }
                         catch (Exception roleEx)
                         {
                             _logger.LogError(roleEx, $"Exception assigning 'Student' role to user {user.UserName}.");
-                            // Xử lý exception khi gán vai trò
                         }
-                        // ==========================================================
-                        // ==             KẾT THÚC PHẦN GÁN VAI TRÒ               ==
-                        // ==========================================================
-
-                        // (Code tạo student profile - cần inject DbContext và bỏ comment)
+                      
                         try
                         {
                             var newStudentProfile = new student
@@ -229,8 +191,6 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                         catch (Exception studentEx)
                         {
                             _logger.LogError(studentEx, $"Error creating student profile for user {user.Id}.");
-                            // Có thể thêm lỗi vào ModelState nếu muốn thông báo cho người dùng
-                            // ModelState.AddModelError(string.Empty, "Failed to create student profile.");
                         }
 
 
@@ -243,8 +203,6 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                             protocol: Request.Scheme);
 
-                        // (Code gửi Email - cần cấu hình IEmailSender)
-                        // await _emailSender.SendEmailAsync(Input.Email, "Confirm your email", $"...");
 
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {
@@ -256,7 +214,6 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                             return LocalRedirect(returnUrl);
                         }
                     }
-                    // Nếu result.Succeeded là false (do lỗi validation của Identity)
                     foreach (var error in result.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
@@ -264,7 +221,6 @@ namespace ManagementCenter.Areas.Identity.Pages.Account
                 }
             }
 
-            // Trả về trang nếu ModelState ban đầu không hợp lệ hoặc có lỗi được thêm vào ModelState
             return Page();
         }
 

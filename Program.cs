@@ -6,14 +6,13 @@ using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Microsoft.Extensions.DependencyInjection; // Quan trọng cho AddLocalization
+using Microsoft.Extensions.DependencyInjection; 
 using Microsoft.Extensions.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddLocalization(); // Đảm bảo không lỗi ở dòng này (cần using)
+builder.Services.AddLocalization(); 
 
-// Cấu hình RequestLocalizationOptions
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var supportedCultures = new[]
@@ -21,14 +20,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
         new CultureInfo("vi-VN") // BẮT BUỘC CÓ VI-VN
     };
 
-    // Đặt culture mặc định là vi-VN
     options.DefaultRequestCulture = new RequestCulture("vi-VN");
-    // Khai báo các culture được hỗ trợ
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
 });
 
-// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -45,7 +41,6 @@ builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
@@ -67,7 +62,6 @@ if (localizationOptions != null)
 }
 else
 {
-    // Log hoặc fallback nếu cần
     app.Logger.LogWarning("RequestLocalizationOptions not found. Applying minimal fallback settings.");
     var fallbackOptions = new RequestLocalizationOptions()
        .SetDefaultCulture("vi-VN")
@@ -78,9 +72,8 @@ else
 
 
 
-app.UseStaticFiles(); // Sử dụng Static Files
-
-app.UseAuthentication(); // Xác thực người dùng
+app.UseStaticFiles(); 
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapStaticAssets();

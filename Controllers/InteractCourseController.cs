@@ -20,33 +20,26 @@ namespace ManagementCenter.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        // Inject DbContext và UserManager qua constructor
         public InteractCourseController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
-        // --- Hàm tiện ích để lấy thông tin student hiện tại ---
         private async Task<student> GetCurrentStudent()
         {
-            // Lấy ApplicationUserId của người dùng đang đăng nhập
             var applicationUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(applicationUserId))
             {
                 return null; // Không tìm thấy user đăng nhập
             }
 
-            // Tìm bản ghi student tương ứng trong bảng student
-            // Giả định rằng đã có liên kết giữa ApplicationUser và student
             return await _context.student
                            .FirstOrDefaultAsync(s => s.ApplicationUserId == applicationUserId);
                 
         }
 
 
-        // --- 1. Xem danh sách các khóa học đã đăng ký ---
-        // GET: /StudentArea/MyRegistrations
         [Authorize(Roles = "Student")]
         public async Task<IActionResult> MyRegistrations()
         {
@@ -69,8 +62,6 @@ namespace ManagementCenter.Controllers
         }
 
 
-        // --- 2. Xử lý Đăng ký khóa học ---
-        // POST: /StudentArea/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Student")]
@@ -141,8 +132,6 @@ namespace ManagementCenter.Controllers
         }
 
 
-        // --- 3. Xử lý Hủy đăng ký khóa học ---
-        // POST: /StudentArea/CancelRegistration
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Student")]
@@ -196,8 +185,6 @@ namespace ManagementCenter.Controllers
         }
 
 
-        // --- 4. Khu vực học tập (Ví dụ đơn giản) ---
-        // GET: /StudentArea/LearningZone/5 (id là registrationId)
         [Authorize(Roles = "Student")]
         public async Task<IActionResult> LearningZone(int? id) // id là registrationId
         {
@@ -231,13 +218,10 @@ namespace ManagementCenter.Controllers
         }
 
 
-        // --- 5. Xem danh sách các khóa học có sẵn để đăng ký ---
-        // GET: /StudentArea/AvailableCourses
         [AllowAnonymous]
 
         public async Task<IActionResult> AvailableCourses(string searchString)
         {
-            // --- Phần truy vấn và lọc course theo searchString giữ nguyên ---
             var coursesQuery = _context.course.AsQueryable();
             ViewData["CurrentFilter"] = searchString;
             if (!String.IsNullOrEmpty(searchString))
@@ -247,22 +231,17 @@ namespace ManagementCenter.Controllers
             }
             coursesQuery = coursesQuery.OrderBy(c => c.start_date);
             var courses = await coursesQuery.ToListAsync();
-            // --- Kết thúc phần lọc course ---
 
             HashSet<int> registeredCourseIds = new HashSet<int>();
 
-            // Chỉ thực hiện logic này nếu người dùng là Student đã đăng nhập
             if (User.Identity.IsAuthenticated && User.IsInRole("Student"))
             {
-                // 1. Lấy đối tượng student tương ứng với ApplicationUser đang đăng nhập
                 var currentStudent = await GetCurrentStudent();
 
                 if (currentStudent != null)
                 {
-                    // 2. Lấy khóa chính (int) từ đối tượng student đã lấy được
                     int studentPrimaryKey = currentStudent.student_id; // <-- Lấy student_id (int) từ student
 
-                    // 3. Sử dụng khóa chính (int) này để so sánh với r.student_id (int)
                     registeredCourseIds = await _context.registration
                             .Where(r => r.student_id == studentPrimaryKey && r.status != "Cancelled") // <-- So sánh int == int
                             .Select(r => r.course_id)
@@ -271,7 +250,6 @@ namespace ManagementCenter.Controllers
             }
             ViewBag.RegisteredCourseIds = registeredCourseIds; // Truyền đi
 
-            // --- Phần lấy registrationCounts giữ nguyên ---
             var courseIds = courses.Select(c => c.course_id).ToList();
             Dictionary<int, int> registrationCounts = new Dictionary<int, int>();
             if (courseIds.Any())
@@ -283,14 +261,11 @@ namespace ManagementCenter.Controllers
                        .ToDictionaryAsync(x => x.CourseId, x => x.Count);
             }
             ViewBag.RegistrationCounts = registrationCounts;
-            // --- Kết thúc phần lấy registrationCounts ---
           
             return View(courses);
         }
 
 
-        // --- 6. Xem chi tiết một khóa học ---
-        // GET: /StudentArea/CourseDetails/5 (id là course_id)
         public async Task<IActionResult> CourseDetails(int? id) // id là course_id
         {
             if (id == null)

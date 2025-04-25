@@ -22,8 +22,14 @@ namespace ManagementCenter.Controllers
         // GET: registration
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.registration.Include(r => r.course).Include(r => r.student);
-            return View(await applicationDbContext.ToListAsync());
+            var allRegistrations = await _context.registration 
+         .Include(r => r.course)         
+         .Include(r => r.student)        
+             .ThenInclude(s => s.ApplicationUser) 
+         .OrderByDescending(r => r.registration_date) 
+         .ToListAsync();
+
+            return View(allRegistrations); 
         }
 
         // GET: registration/Details/5

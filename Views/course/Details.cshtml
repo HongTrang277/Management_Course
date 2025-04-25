@@ -1,67 +1,95 @@
 ﻿@model ManagementCenter.Models.course
+@using System.Globalization; @* Cần cho định dạng tiền tệ *@
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết: " + Model.course_name; // Đặt tiêu đề trang cụ thể hơn
+                                                          // Lấy URL ảnh, xử lý trường hợp null hoặc rỗng
+    var imageUrl = !string.IsNullOrEmpty(Model.ImageUrl) ? Model.ImageUrl : "/images/placeholder-course.png"; // <<< THAY bằng link ảnh placeholder mặc định của bạn
+    var imageAlt = $"Ảnh bìa cho khóa học {Model.course_name}";
 }
 
-<div>
-    <h4>course</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.tutor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.tutor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.course_name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.course_name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.start_date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.start_date)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fee)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fee)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.max_capacity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.max_capacity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.schedule)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.schedule)
-        </dd>
-         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-         </dt>
-         <dd class = "col-sm-10">
-            @if (!string.IsNullOrEmpty(Model.ImageUrl))
-            {
-                    <a href="@Model.ImageUrl" target="_blank">@Model.ImageUrl</a>
-                    <br />
-                    <img src="@Model.ImageUrl" alt="Ảnh nền khóa học" style="max-width: 200px; max-height: 150px; margin-top: 10px; border: 1px solid #ccc;" />
-            }
-            else
-            {
-                    <span>(Không có ảnh)</span>
-            }
-         </dd>
-    </dl>
+
+
+
+@* --- Khu vực hiển thị ảnh lớn --- *@
+<div class="course-details-hero mb-4">
+    <img src="@imageUrl" alt="@imageAlt" class="img-fluid rounded shadow-sm"
+         style="max-height: 200px; width: 100%; object-fit: cover;" /> @* <<< Giảm max-height ở đây (ví dụ: 250px) *@
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.course_id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+@* --- Tiêu đề khóa học --- *@
+
+
+@* --- Thông tin chi tiết dạng danh sách hoặc grid --- *@
+<div class="card bg-dark border-secondary"> @* Dùng card nền tối *@
+    <div class="card-header">
+        Thông tin chi tiết
+    </div>
+    <div class="card-body text-light"> @* Chữ sáng trên nền tối *@
+        <dl class="row mb-0"> @* Bỏ margin bottom mặc định của dl *@
+            <dt class="col-sm-3">Giảng Viên:</dt>
+            <dd class="col-sm-9">@(Model.tutor ?? "Chưa có")</dd>
+
+            <dt class="col-sm-3">Ngày Bắt Đầu:</dt>
+            <dd class="col-sm-9">@(Model.start_date.HasValue ? Model.start_date.Value.ToString("dd/MM/yyyy") : "Chưa đặt")</dd>
+
+
+            <dt class="col-sm-3">Học Phí:</dt>
+            <dd class="col-sm-9">@(Model.fee.HasValue ? Model.fee.Value.ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " VNĐ" : "Miễn phí")</dd>
+
+            <dt class="col-sm-3">Số lượng tối đa:</dt>
+            <dd class="col-sm-9">@(Model.max_capacity.HasValue ? Model.max_capacity.Value.ToString() : "Không giới hạn")</dd>
+
+            <dt class="col-sm-3">Lịch Học:</dt>
+            <dd class="col-sm-9">@(Model.schedule ?? "Chưa cập nhật")</dd>
+
+            <dt class="col-sm-3">Link Ảnh Nền URL:</dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                        <a href="@Model.ImageUrl" target="_blank" class="text-break">@Model.ImageUrl</a> @* text-break để xuống dòng nếu link quá dài *@
+                }
+                else
+                {
+                         <span>(Chưa có)</span>
+                }
+            </dd>
+
+            @* Thêm các trường thông tin khác nếu cần, ví dụ mô tả khóa học *@
+            @*
+             <dt class="col-sm-3">Mô tả:</dt>
+             <dd class="col-sm-9">@Model.Description</dd>
+             *@
+        </dl>
+    </div>
 </div>
+
+@* --- Nút hành động --- *@
+<div class="mt-4">
+    @* Nút Edit - Sử dụng màu nút tùy chỉnh nếu muốn *@
+    <a asp-action="Edit" asp-route-id="@Model.course_id" class="btn btn-warning"> @* Hoặc btn-custom-edit *@
+         <i class="bi bi-pencil-fill me-1"></i> Chỉnh sửa
+     </a>
+    @* Nút quay lại danh sách *@
+    <a asp-action="Index" class="btn btn-secondary ms-2">
+        <i class="bi bi-arrow-left me-1"></i> Quay lại Danh sách
+    </a>
+    @* Thêm nút Delete nếu muốn *@
+     <a asp-action="Delete" asp-route-id="@Model.course_id" class="btn btn-danger ms-2">
+         <i class="bi bi-trash-fill me-1"></i> Xóa
+     </a>
+</div>
+
+@section Styles {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            /* Đảm bảo class .page-title đã được định nghĩa trong site.css */
+            .page-title {
+                color: #a779e9; /* Màu tím */
+                font-weight: 600;
+            }
+            /* Style cho card tối màu */
+            .card.bg-dark { background-color: #343a40 !important; } /* Hoặc màu tối hơn */
+            .card-header { background-color: rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+            .text-light dt { color: #adb5bd; } /* Màu chữ sáng hơn cho dt */
+        </style>
+}
